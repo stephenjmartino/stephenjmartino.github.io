@@ -603,6 +603,11 @@ progress {
   height: auto;
 }
 
+.img-siena {
+  max-width: 85%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -3238,6 +3243,19 @@ textarea.form-control-lg {
   background-color: #212529;
   border-color: #212529;
 }
+
+.btn-linkedin {
+  color: #0e76a8;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-git {
+  color: #333;
+  background-color: #fff;
+  border-color: #fff;
+}
+
 .btn-dark:hover {
   color: #fff;
   background-color: #1c1f23;
@@ -7760,7 +7778,12 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #9794948f !important;
+  color: #4242428f !important;
+}
+
+.text-contact {
+  --bs-text-opacity: 1;
+  color: #fdfbfbde !important;
 }
 
 .text-black-50 {
@@ -11317,8 +11340,8 @@ p {
 }
 
 .btn-social {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11399,7 +11422,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/epoxy\ river\ table.jpg");
+  background-image: url("../assets/img/Epoxy\ 1.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
