@@ -44,24 +44,21 @@
                 </div>
             </div>
         </nav>
+
         <!-- Masthead-->
         <header class="masthead">
+
             <!-- Carousel Section -->
     <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+            <!-- First image always the same -->
             <div class="carousel-item active">
-                <img src="assets/img/Collage.png" class="d-block w-100" alt="Image 1">
+                <img src="assets/img/Collage.png" class="d-block w-100" alt="First Image">
             </div>
-            <!---
-            <div class="carousel-item">
-                <img src="assets/img/portfolio/ADK Chair 1.jpg" class="d-block w-100" alt="Image 2">
-            </div>
-        -->
-            <!-- Add more carousel items for additional images -->
+            <!-- Remaining images will be dynamically added here using JavaScript -->
         </div>
 
         <!-- Carousel Navigation Buttons -->
-        <!--
         <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -70,16 +67,72 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    -->
     </div>
-
 
             <div class="container">
                 <div class="masthead-subheading">Stephen J Martino</div>
                 <div class="masthead-heading text-uppercase">Woodworker<br \>College Student<br />Future Mechanical Engineer</div>              
                 <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>  -->
             </div>
+
+            <!-- Include Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+
+    <!-- Your custom JavaScript -->
+<script>
+    console.log('Script executed');
+
+    // Shuffle function to randomly rearrange array elements
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Array of image filenames (excluding the first one)
+    const imageFilenames = [
+        'old.jpg',
+        'image3.jpg',
+        'image4.jpg',
+        // Add more image filenames as needed
+    ];
+
+    // Path to the assets/img folder
+    const imagePath = 'assets/img/';
+
+    // Concatenate the path to each filename
+    const imagePaths = imageFilenames.map(filename => imagePath + filename);
+
+    console.log('First image:', firstImage);
+
+    // Shuffle the array of remaining image paths
+    const shuffledImages = shuffleArray([...imagePaths]);
+
+    console.log('Shuffled images:', shuffledImages);
+
+    // Populate the carousel with the first image and shuffled images
+    const carouselInner = document.querySelector('#headerCarousel .carousel-inner');
+
+    console.log('Carousel inner:', carouselInner);
+
+    // Add the first image
+    carouselInner.innerHTML += `<div class="carousel-item active"><img src="${firstImage}" class="d-block w-100" alt="First Image"></div>`;
+
+    // Add the remaining shuffled images
+    shuffledImages.forEach((imagePath) => {
+        const carouselItem = document.createElement('div');
+        carouselItem.className = 'carousel-item';
+        carouselItem.innerHTML = `<img src="${imagePath}" class="d-block w-100" alt="Image">`;
+        carouselInner.appendChild(carouselItem);
+    });
+</script>
+
+
+
         </header>
+
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
@@ -95,7 +148,7 @@
                                 <h4>2014-2020</h4>
                                 <h4 class="subheading">Taking Tech Classes</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">My introduction to woodworking began in 7th-grade technology class, laying the groundwork for a technical skill set. The journey progressed through wood construction classes in 10th and 12th grades, where I honed fundamental skills and safety techniques. From the initial stages of learning basic cuts to mastering advanced woodworking techniques, each step marked a technical evolution. Woodworking transitioned beyond a skill acquisition process to a systematic language for precise craftsmanship. Now, as I reflect on this segment of my journey, it encapsulates a progression from foundational knowledge to technical proficiency—a testament to dedication and disciplined skill development in the field of woodworking.</p></div>
+                            <div class="timeline-body"><p class="text-muted">My introduction to woodworking began in 7th-grade technology class, laying the groundwork for a technical skill set. The journey progressed through wood construction classes in 10th and 12th grades, where I honed fundamental skills and safety techniques. From the initial stages of learning basic cuts to mastering advanced woodworking techniques, each step marked a technical evolution. As I reflect on this segment of my journey, it represents a progression from foundational knowledge to technical proficiency.</p></div>
                         </div>
                     </li>
 
@@ -106,7 +159,7 @@
                                 <h4>2017-Present</h4>
                                 <h4 class="subheading">YouTube Research and Skill Development</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">My woodworking journey took a transformative turn as I dedicated countless hours to absorbing insights from woodworking tutorials on YouTube. These online resources became my mentors, teaching me the intricacies of woodworking, safe tool usage, and essential skills that continue to be invaluable. Armed with this knowledge, I established my personal workshop—a space where theory seamlessly translated into hands-on practice. Each project undertaken in my workspace served as a canvas for refining techniques, implementing safety protocols, and pushing the boundaries of my woodworking capabilities. The amalgamation of virtual learning and personal practice not only deepened my understanding of the craft but also marked a significant chapter in my growth as a woodworker.</p></div>
+                            <div class="timeline-body"><p class="text-muted">During this next phase, my woodworking journey shifted into high gear as I dedicated countless hours to absorbing insights from woodworking tutorials on YouTube. These online resources became my mentors, teaching me the intricacies of woodworking, safe tool usage, and essential skills that continue to be invaluable. With this knowledge, I established my personal workshop. Each project undertaken in my workspace helped to refine my techniques, implement safety protocols, and further develop my woodworking skills. The combination of virtual learning and personal practice not only deepened my understanding of the craft but also marked a significant chapter in my growth as a woodworker.</p></div>
                         </div>
                     </li>
 
@@ -115,9 +168,9 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2018-Present</h4>
-                                <h4 class="subheading">Building my own woodshop</h4>
+                                <h4 class="subheading">Building My Own Woodshop</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Transitioning into a more hands-on phase of my woodworking journey, I revamped a neglected corner of my basement, solving lighting issues to create a functional workspace. With basic tools in hand, I constructed a sturdy workbench, laying the groundwork for the expansion of my woodworking haven. This pivotal step marked the beginning of a deliberate journey to grow both my tool repertoire and woodworking skills. Slowly but steadily, my workshop transformed from a modest corner into a dynamic space, reflecting not just the physical expansion but also the increasing complexity of my projects and the continual refinement of my craft.</p></div>
+                            <div class="timeline-body"><p class="text-muted">At this point I realized that a personal workshop was needed.  To address this need,  I revamped a neglected corner of my basement to create a functional workspace. I constructed a sturdy workbench and resolved significant lighting issues in order to lay the groundwork for the expansion of my woodworking. This pivotal step marked the beginning of a deliberate journey to grow both my tool repertoire and woodworking skills. Slowly but steadily, my workshop transformed from a modest corner into a dynamic space, enabling me to take on increasingly complex projects and continue to refine my craft.</p></div>
                         </div>
                     </li>
 
@@ -128,7 +181,7 @@
                                 <h4>2020-2021</h4>
                                 <h4 class="subheading">Carpenter at Urban Industrial Design</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">In 2020, I took a significant stride in my woodworking journey by joining a local small business specializing in custom furniture, wood slab sales, and the production of floating shelves for retail on Amazon. This employment not only afforded me the opportunity to work efficiently within the demands of the job but also facilitated substantial skill development, heightening my safety awareness and hazard recognition in the workplace. Beyond the hands-on manufacturing processes, I gained insights into crucial small-business operations. The experience enriched my understanding of the end-to-end customer order fulfillment process. Specifically, I contributed to the creation of floating shelves—cutting the boards, drilling, sanding, staining, and meticulously packaging them for shipping. This role not only honed my technical woodworking skills but also showcased my ability to collaborate in a dynamic and noisy environment, maintaining high productivity levels in tandem with others.</p></div>
+                            <div class="timeline-body"><p class="text-muted">In 2020, I took a significant stride in my woodworking journey by joining a local small business specializing in custom furniture, wood slab sales, and the production of floating shelves for retail on Amazon. This employment not only afforded me the opportunity to work efficiently within the demands of the job but also facilitated substantial skill development, heightening my safety awareness and hazard recognition in the workplace. Beyond the hands-on manufacturing processes, I gained insights into crucial small-business operations. The experience enriched my understanding of the end-to-end customer order fulfillment process. Specifically, I contributed to the creation of floating shelves—cutting boards, drilling, sanding, staining, and meticulously packaging them for shipping. This role not only honed my technical woodworking skills but also developed my ability to collaborate in a dynamic and noisy environment, maintaining high productivity levels while working with others.</p></div>
                         </div>
                     </li>
 
@@ -139,7 +192,7 @@
                                 <h4>Present</h4>
                                 <h4 class="subheading">Planning New Projects</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">In the current phase of my woodworking journey, I find myself immersed in the planning and conceptualization of future projects, consistently fueled by a reservoir of ideas and inspiration. Whether during spare moments or school breaks, I typically have a queue of 5 or 6 projects waiting to be completed. This perpetual stream of creativity drives me to continually learn and experiment with new technologies and techniques, seeking to infuse innovation into every endeavor. Simultaneously, my focus extends beyond the workshop as I delve into growing and enhancing my small woodworking business. This involves a strategic exploration of avenues for improvement, be it in refining existing processes or adopting innovative approaches. The commitment to lifelong learning, coupled with a dedication to pushing the boundaries of my craft, propels me forward, ready to embrace the challenges and opportunities that lie ahead in my woodworking journey.</p></div>
+                            <div class="timeline-body"><p class="text-muted">In the current phase of my woodworking journey, I am immersed in the planning and conceptualization of future projects. Whether during spare moments or school breaks, I typically have a queue of 5 or 6 projects waiting to be completed. This perpetual stream of creativity drives me to continually learn and experiment with new technologies and techniques, seeking to infuse innovation into every endeavor. Simultaneously, my focus extends beyond the workshop as I delve into growing and enhancing my small woodworking business. This involves an exploration of avenues for improvement, be it in refining existing processes or adopting innovative approaches. The commitment to lifelong learning, coupled with a dedication to pushing the boundaries of my craft, propels me forward, ready to embrace the challenges and opportunities that lie ahead in my woodworking journey.</p></div>
                         </div>
                     </li>
 
@@ -253,11 +306,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/R2D2.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Machined Luke Skywalker's Lightsaber</div>
-                                <div class="portfolio-caption-subheading text-muted">June 2023</div>
+                                <div class="portfolio-caption-heading">3D Printed Remote Controlled Life Size R2D2</div>
+                                <div class="portfolio-caption-subheading text-muted">September 2022 - Present</div>
                             </div>
                         </div>
                     </div>
@@ -269,11 +322,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/EndTables 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Mahoghany Side Tables</div>
-                                <div class="portfolio-caption-subheading text-muted">July 2022</div>
+                                <div class="portfolio-caption-heading">Machined Luke Skywalker's Lightsaber</div>
+                                <div class="portfolio-caption-subheading text-muted">June 2023</div>
                             </div>
                         </div>
                     </div>
@@ -301,11 +354,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Office Desk 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Big Flag 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Office Desk, Drawer, and Shelving Unit</div>
-                                <div class="portfolio-caption-subheading text-muted">December 2020</div>
+                                <div class="portfolio-caption-heading">Wooden American Flags</div>
+                                <div class="portfolio-caption-subheading text-muted">February 2021-Present</div>
                             </div>
                         </div>
                     </div>
@@ -317,11 +370,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Cubby 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/EndTables 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Preschool Cubby Units</div>
-                                <div class="portfolio-caption-subheading text-muted">August 2022</div>
+                                <div class="portfolio-caption-heading">Mahogany Side Tables</div>
+                                <div class="portfolio-caption-subheading text-muted">July 2022</div>
                             </div>
                         </div>
                     </div>
@@ -333,11 +386,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Classroom 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Mom Side Table.PNG" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Classroom Shelving Units</div>
-                                <div class="portfolio-caption-subheading text-muted">August 2022</div>
+                                <div class="portfolio-caption-heading">Mahogany End Table</div>
+                                <div class="portfolio-caption-subheading text-muted">January 2024</div>
                             </div>
                         </div>
                     </div>
@@ -349,11 +402,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Big Flag 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Endgrain 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Wooden American Flags</div>
-                                <div class="portfolio-caption-subheading text-muted">February 2021-Present</div>
+                                <div class="portfolio-caption-heading">Endgrain Cutting Boards</div>
+                                <div class="portfolio-caption-subheading text-muted">December 2021-Present</div>
                             </div>
                         </div>
                     </div>
@@ -381,6 +434,70 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Office Desk 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Office Desk, Drawer, and Shelving Unit</div>
+                                <div class="portfolio-caption-subheading text-muted">December 2020</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 13-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal13">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Cubby 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Preschool Cubby Units</div>
+                                <div class="portfolio-caption-subheading text-muted">August 2022</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 14-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal14">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Classroom 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Classroom Shelving Units</div>
+                                <div class="portfolio-caption-subheading text-muted">August 2022</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 15-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal15">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Storage Rack.PNG" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Plywood Storage Rack</div>
+                                <div class="portfolio-caption-subheading text-muted">January 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 16-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal16">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
                                 <img class="img-fluid" src="assets/img/portfolio/Saruman 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
@@ -391,9 +508,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 13-->
+                        <!-- Portfolio item 17-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal13">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal17">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -407,25 +524,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 14-->
+                        <!-- Portfolio item 18-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal14">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Tees 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">3D Printed Backyard Golf Course Tee Markers</div>
-                                <div class="portfolio-caption-subheading text-muted">June 2022</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 15-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal15">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal18">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -439,41 +540,25 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 16-->
+                        <!-- Portfolio item 19-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal16">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal19">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Campfire 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Tees 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Folding Campfire Seat</div>
-                                <div class="portfolio-caption-subheading text-muted">July 2019</div>
+                                <div class="portfolio-caption-heading">3D Printed Backyard Golf Course Tee Markers</div>
+                                <div class="portfolio-caption-subheading text-muted">June 2022</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 17-->
+                        <!-- Portfolio item 20-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal17">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Barstool 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Classic Barstool</div>
-                                <div class="portfolio-caption-subheading text-muted">July 2019</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 18-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal18">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal20">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -487,9 +572,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 19-->
+                        <!-- Portfolio item 21-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal19">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal21">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -502,12 +587,42 @@
                         </div>
                     </div>
 
-                    
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 22-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal22">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Barstool 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Classic Barstool</div>
+                                <div class="portfolio-caption-subheading text-muted">July 2019</div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 23-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal23">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Campfire 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Folding Campfire Seat</div>
+                                <div class="portfolio-caption-subheading text-muted">July 2019</div>
+                            </div>
+                        </div>
+                    </div>                  
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-lg-0">
-                        <!-- Portfolio item 20-->
+                        <!-- Portfolio item 24-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal20">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal24">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -521,9 +636,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 21-->
+                        <!-- Portfolio item 25-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal21">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal25">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -537,9 +652,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 22-->
+                        <!-- Portfolio item 26-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal22">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal26">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -553,9 +668,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 23-->
+                        <!-- Portfolio item 27-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal23">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal27">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -569,9 +684,25 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 24-->
+                        <!-- Portfolio item 28-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal24">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal28">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Steam1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Air-Powered Steam Engine</div>
+                                <div class="portfolio-caption-subheading text-muted">May 2019</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 29-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal29">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -585,41 +716,25 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 25-->
+                        <!-- Portfolio item 30-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal25">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Endgrain 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Endgrain Cutting Boards</div>
-                                <div class="portfolio-caption-subheading text-muted">December 2021-Present</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 26-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal26">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal30">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
                                 <img class="img-fluid" src="assets/img/portfolio/Tooth 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Mahoghany and Oak Toothbrush Holder</div>
+                                <div class="portfolio-caption-heading">Mahogany and Oak Toothbrush Holder</div>
                                 <div class="portfolio-caption-subheading text-muted">April 2020</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 27-->
+                        <!-- Portfolio item 31-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal27">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal31">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -633,9 +748,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 28-->
+                        <!-- Portfolio item 32-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal28">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal32">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -648,58 +763,10 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 29-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal29">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/B&W Stool 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Fourlegged Wooden Stool</div>
-                                <div class="portfolio-caption-subheading text-muted">2019</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 30-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal30">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Enclosure 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Custom Built 3D Printer Enclosure</div>
-                                <div class="portfolio-caption-subheading text-muted">July 2020</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 31-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal31">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Scrapwood 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Walnut and Maple Scrapwood Endgrain Cheeseboard</div>
-                                <div class="portfolio-caption-subheading text-muted">July 2021</div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-3 col-sm-6 mb-0 mb-lg-0">
-                        <!-- Portfolio item 32-->
+                        <!-- Portfolio item 33-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal32">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal33">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -708,22 +775,6 @@
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Wooden Thor's Hammer Replica</div>
                                 <div class="portfolio-caption-subheading text-muted">December 2019</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 33-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal33">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Steam1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Air-Powered Steam Engine</div>
-                                <div class="portfolio-caption-subheading text-muted">May 2019</div>
                             </div>
                         </div>
                     </div>
@@ -783,11 +834,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Mallet 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Sheet Metal 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Mahoghany Carpenter's Mallet</div>
-                                <div class="portfolio-caption-subheading text-muted">January 2020</div>
+                                <div class="portfolio-caption-heading">Sheet Metal Boxes</div>
+                                <div class="portfolio-caption-subheading text-muted">October 2018</div>
                             </div>
                         </div>
                     </div>
@@ -796,6 +847,22 @@
                         <!-- Portfolio item 38-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal38">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Mallet 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Mahogany Carpenter's Mallet</div>
+                                <div class="portfolio-caption-subheading text-muted">January 2020</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 39-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal39">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -809,33 +876,17 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 39-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal39">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Sheet Metal 1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Sheet Metal Boxes</div>
-                                <div class="portfolio-caption-subheading text-muted">October 2018</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
                         <!-- Portfolio item 40-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal40">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Chest 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Scrapwood 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Melamine Storage Chest</div>
-                                <div class="portfolio-caption-subheading text-muted">April 2016</div>
+                                <div class="portfolio-caption-heading">Walnut and Maple Scrapwood Endgrain Cheeseboard</div>
+                                <div class="portfolio-caption-subheading text-muted">July 2021</div>
                             </div>
                         </div>
                     </div>
@@ -847,11 +898,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Half Lap Stool 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/Chest 1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Half Lap Shop Stool</div>
-                                <div class="portfolio-caption-subheading text-muted">May 2020</div>
+                                <div class="portfolio-caption-heading">Melamine Storage Chest</div>
+                                <div class="portfolio-caption-subheading text-muted">April 2016</div>
                             </div>
                         </div>
                     </div>
@@ -871,13 +922,27 @@
                             </div>
                         </div>
                     </div>
-
                     
-
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
                         <!-- Portfolio item 43-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal43">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/Enclosure 1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Custom Built 3D Printer Enclosure</div>
+                                <div class="portfolio-caption-subheading text-muted">July 2020</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
+                        <!-- Portfolio item 44-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal44">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -891,9 +956,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 44-->
+                        <!-- Portfolio item 45-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal44">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal45">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -907,9 +972,9 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 mb-0 mb-sm-0">
-                        <!-- Portfolio item 45-->
+                        <!-- Portfolio item 46-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal45">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal46">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -935,7 +1000,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/Outdoors.jpeg" alt="..." />
                             <h4>Being Outdoors</h4>
-                            <p class="text-muted">Outside of my professional and personal pursuits, I find immense joy in the great outdoors, engaging in activities like running, biking, swimming, and road trips, all while relishing quality time with family and friends. While the summer months offer the perfect backdrop for these pursuits, I'm not one to shy away during colder seasons. Growing up, my childhood was infused with constant outdoor adventures, a foundation that fuels my ongoing quest for new and enjoyable activities. Always on the lookout for fresh hobbies that get me outdoors, my love for nature and exploration remains a constant, driving me to embrace every season with an eagerness for new experiences. Some of the best moments come from simple outdoor gatherings with those close to me, creating memories that stick with me.</p>
+                            <p class="text-muted">Outside of my professional and personal pursuits, I find tremendous joy in the great outdoors, engaging in activities like running, biking, swimming, and road trips. While the summer months offer the perfect backdrop for these pursuits, I also enjoy skating during the winter months. Growing up, my childhood was infused with constant outdoor adventures, and I’m always on the lookout for new hobbies that get me outdoors. Some of the best moments come from simple outdoor gatherings with those close to me, creating memories that will last a lifetime.</p>
                            
                         </div>
                     </div>
@@ -943,14 +1008,14 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/baseball.jpg" alt="..." />
                             <h4>Sports</h4>
-                            <p class="text-muted">I played varsity baseball and ran cross country in high school. Currently, I continue to channel that passion for sports into club baseball during my college years. Beyond the baseball diamond, I find enjoyment in a variety of sports, whether it's the precision of golf, the fast-paced nature of pickup basketball, the camaraderie of pickleball, or the exhilaration of pond hockey. Off the field, I engage in casual activities like kanjam and cornhole, appreciating the simplicity and fun they bring. Additionally, I embrace the winter months with a pair of skates, enjoying the thrill of ice skating. My love for sports isn't confined to playing alone; I'm an avid spectator, cheering on the Pittsburgh Steelers, Pittsburgh Penguins, and Boston Red Sox in football, hockey, and baseball, respectively. The blend of active participation and passionate fandom adds a dynamic and fulfilling dimension to my recreational pursuits.</p>
+                            <p class="text-muted">I played varsity baseball and ran cross country in high school and have been fortunate enough to continue playing on the club baseball team during my college years. Beyond the baseball diamond, I enjoy a variety of sports, including golf, pickleball, basketball, and pond hockey, as well as kanjam and cornhole. Additionally, during the winter months I enjoy ice skating. My love for sports isn't confined to playing alone; I'm an avid fan, cheering on the Pittsburgh Steelers, Pittsburgh Penguins, and Boston Red Sox.</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/US History.jpeg" alt="..." />
                             <h4>US History</h4>
-                            <p class="text-muted">Beyond my active hobbies, I find profound intellectual fulfillment in immersing myself in the intricate details of the United States' role in the world, with a specific and enduring fascination for the monumental events of World War II. The battles fought during this pivotal period, and the men who shaped the course of those battles, have become subjects of deep interest for me. Diving into the complexities of World War II, I am drawn to the narratives of strategic decisions, the valor of those who fought, and the indomitable spirit of those who defined an era. This exploration is not merely a hobby but a journey into the details of global history, a quest to understand the multifaceted aspects that shaped the course of nations and the lives of countless individuals. The sacrifices made, the strategies employed, and the resilience displayed during this vital period serve as a lens through which I glean insights into the profound impact of historical events on the world we inhabit today.</p>
+                            <p class="text-muted">Beyond my active hobbies, I enjoy learning about the United States' role in the world, with a specific fascination for the monumental events of World War II. The battles fought during this pivotal period, and the men who shaped the course of those battles, have become subjects of deep interest for me. Diving into the complexities of World War II, I am drawn to the narratives of strategic decisions, the valor of those who fought, and the indomitable spirit of those who defined an era. This exploration is not merely a hobby but a quest to understand the multifaceted aspects that shaped the course of nations and the lives of countless individuals. The sacrifices made, the strategies employed, and the resilience displayed during this vital period serve as a lens through which I glean insights into the impact of historical events on the world we inhabit today.</p>
                             
                         </div>
                     </div>
@@ -1037,6 +1102,7 @@
             </div>
         </footer>
         <!-- Portfolio Modals-->
+
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -1191,16 +1257,13 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Machined Luke Skywalker's Lightsaber</h2>
+                                    <h2 class="text-uppercase">3D Printed Remote Controlled Life Size R2D2</h2>
                                     <p class="item-intro text-muted">June 2023</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/R2D2.jpg" alt="..." />
 
-                                    <p><pre></pre>Embark on a journey to a galaxy far, far away with the realization of a childhood dream: a meticulously handcrafted, all-metal replica of Luke Skywalker's iconic green lightsaber from Return of the Jedi (1983). The inception of this project found its catalyst in a lifelong passion for Star Wars, with the pursuit of authenticity driving the desire to create a lightsaber that transcends mere toy replicas.
-                                        <pre></pre>The opportunity to bring this vision to life arose during a machining class at the Capital Region BOCES facility near the Albany Airport, facilitated by the generous guidance of Mr. Kody Skeals. His willingness to extend access to the metal lathes and milling machines outside of regular class hours, coupled with invaluable mentorship, transformed this project into a remarkable learning experience. 
-                                        <pre></pre>The odyssey began with a Solidworks design, crafting a blueprint and ensuring screen-accurate dimensions. A solid block of 6061 aircraft aluminum, measuring 2 inches in diameter and 13 inches in length, served as the canvas for the foundation of the lightsaber hilt. The precision achieved in machining was elevated further through the use of CNC milling machines and a CNC lathe for the highly detailed parts of the project, providing an unprecedented level of detail.
-                                        <pre></pre>Returning to the familiar confines of my woodshop, the metal hilt was primed and painted to replicate the authentic appearance of Luke Skywalker's green lightsaber. To bring the weapon to life, a polycarbonate tube, diffuser foam, and LED strips were carefully integrated. A portable charger provided the power, culminating in a lightsaber blade that could be threaded into the hilt, complete with a 3D printed tip for authenticity. A camera case with foam protection for storing the hilt, and a 3D printed shell for safe storage of the blade showcased the attention to detail invested in every aspect.
-                                        <pre></pre>This project, one of the most rewarding endeavors I've undertaken, extended beyond the creation of the lightsaber. The culmination of this project, with its intricate metalwork and the vibrant glow of the lightsaber blade, stands as a testament to the fusion of craftsmanship and technology. A heartfelt and special thanks extend to Mr. Kody Skeals for his exceptional guidance and support throughout this endeavor. His generosity in allowing extra access to the BOCES facility and sharing invaluable tips and tricks for precision machining made this project not only possible but an extraordinary and unforgettable experience. Without his expertise, this realization of a childhood dream would not have been possible, making this lightsaber not just a symbolic homage to Luke Skywalker but also a tribute to the collaborative spirit of creation.
-                                        </p>
+                                    <p>
+
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1233,25 +1296,24 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Mahoghany Side Tables</h2>
-                                    <p class="item-intro text-muted">July 2022</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/EndTables 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Machined Luke Skywalker's Lightsaber</h2>
+                                    <p class="item-intro text-muted">June 2023</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />
 
-                                    <p><pre></pre>Undertaking a commission from my sister-in-law's aunt, I embarked on the construction of two identical side tables, each a testament to precision woodworking and attention to detail. The project began with a reference photo provided by the client, which I skillfully translated into a scaled blueprint using digital tools.
-                                        <pre></pre>To bring the design to life, I printed out templates of both the tabletop and intricate leg geometry, artfully piecing together multiple sheets of paper to ensure proportional accuracy. With the blueprints in hand, I traced the designs onto a panel glue-up of rich mahogany boards, setting the stage for the creation of these elegant side tables. 
-                                        <pre></pre>Employing the bandsaw, I cut the boards just outside the traced lines, setting the stage for the shaping that followed. The intricate geometry of the legs posed both a challenge and a source of reward. Navigating the delicate curves required precision at every step, pushing the boundaries of my woodworking skills. The bandsaw proved indispensable in creating the initial forms, while the combination of the belt and spindle sanders allowed me to sneak up to the pencil line for unparalleled precision and accuracy.
-                                        <pre></pre>The complexity of the table legs presented both a challenge and a source of reward. The glue-up process, particularly the joining of the three legs to the tabletop, demanded a sophisticated clamping approach to achieve a seamless and stable connection.
-                                        <pre></pre>A personal touch was added to each table, as my signature was laser engraved on the underside of the tabletops—a subtle mark of the artisan responsible for these meticulously crafted pieces. The final touch involved the application of Danish oil, enhancing the natural beauty of the mahogany and providing a durable and lustrous finish.
-                                        <pre></pre>These mahogany side tables stand as a testament to the fusion of craftsmanship and technology, where digital precision meets hands-on skill. The result is not just functional furniture but a pair of timeless pieces that showcase the artistry and dedication invested in their creation.
+                                    <p><pre></pre>Embark on a journey to a galaxy far, far away with the realization of a childhood dream: a meticulously handcrafted, all-metal replica of Luke Skywalker's iconic green lightsaber from Return of the Jedi (1983). The inception of this project found its catalyst in a lifelong passion for Star Wars, with the pursuit of authenticity driving the desire to create a lightsaber that transcends mere toy replicas.
+                                        <pre></pre>The opportunity to bring this vision to life arose during a machining class at the Capital Region BOCES facility near the Albany Airport, facilitated by the generous guidance of Mr. Kody Skeals. His willingness to extend access to the metal lathes and milling machines outside of regular class hours, coupled with invaluable mentorship, transformed this project into a remarkable learning experience. 
+                                        <pre></pre>The odyssey began with a Solidworks design, crafting a blueprint and ensuring screen-accurate dimensions. A solid block of 6061 aircraft aluminum, measuring 2 inches in diameter and 13 inches in length, served as the canvas for the foundation of the lightsaber hilt. The precision achieved in machining was elevated further through the use of CNC milling machines and a CNC lathe for the highly detailed parts of the project, providing an unprecedented level of detail.
+                                        <pre></pre>Returning to the familiar confines of my woodshop, the metal hilt was primed and painted to replicate the authentic appearance of Luke Skywalker's green lightsaber. To bring the weapon to life, a polycarbonate tube, diffuser foam, and LED strips were carefully integrated. A portable charger provided the power, culminating in a lightsaber blade that could be threaded into the hilt, complete with a 3D printed tip for authenticity. A camera case with foam protection for storing the hilt, and a 3D printed shell for safe storage of the blade showcased the attention to detail invested in every aspect.
+                                        <pre></pre>This project, one of the most rewarding endeavors I've undertaken, extended beyond the creation of the lightsaber. The culmination of this project, with its intricate metalwork and the vibrant glow of the lightsaber blade, stands as a testament to the fusion of craftsmanship and technology. A heartfelt and special thanks extend to Mr. Kody Skeals for his exceptional guidance and support throughout this endeavor. His generosity in allowing extra access to the BOCES facility and sharing invaluable tips and tricks for precision machining made this project not only possible but an extraordinary and unforgettable experience. Without his expertise, this realization of a childhood dream would not have been possible, making this lightsaber not just a symbolic homage to Luke Skywalker but also a tribute to the collaborative spirit of creation.
                                         </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            Mary Ann Fortune
+                                            Personal Project
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Furniture
+                                            Real Life Replica
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1315,24 +1377,24 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Office Desk, Drawer, and Shelving Unit</h2>
-                                    <p class="item-intro text-muted">December 2020</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Office Desk 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Wooden American Flags</h2>
+                                    <p class="item-intro text-muted">February 2021-Present</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Big Flag 2.jpg" alt="..." />
 
-                                    <p><pre></pre>Embarking on a special commission from my cousin, I set out to create a custom office desk, drawer, and shelving unit for my dad's childhood home, infusing the project with sentimental value. Designing a piece that would span wall to wall and floor to ceiling in my dad's childhood bedroom required careful consideration and planning.
-                                        <pre></pre>Beginning with precise measurements of the room, I sketched a design that incorporated functional elements and aesthetic appeal. The challenge of determining the number and height of shelves on each side of the window, along with the design intricacies of the drawers flanking the desk, became a rewarding puzzle to solve.
-                                        <pre></pre>Translating the design into reality involved creating an organized parts list, detailing the dimensions of each unique piece required for construction. Calculating the necessary plywood sheets, I used a combination of a circular saw edge guide and a table saw to accurately cut the components to size. Sanding each board to a smooth finish, I then applied iron-on maple edge banding to conceal the plywood layers, providing a polished, natural wood appearance.
-                                        <pre></pre>Assembling the pieces required precision to ensure 90-degree corners and level shelves. Once the components were united, the entire unit received a carefully chosen paint finish. Adding another layer of complexity, the installation of drawer slides became a crucial step. Ensuring parallel alignment from the design phase through assembly, I meticulously incorporated slides for all four drawers and the cabinet carcass. This step, demanding precision and accuracy, guaranteed smooth opening and closing functionality for the drawers.
-                                        <pre></pre>This custom office unit not only serves a functional purpose but also stands as a labor of love, connecting the past with the present in the very room where my father once lived.
+                                    <p><pre></pre>In early 2021, I embarked on a journey to craft wooden American flags, drawing inspiration from online tutorials and reference photos. My aim was to bring a personal touch to each flag, combining elements from existing designs with my unique flair. Since the inception of this project, my process has evolved and improved, resulting in distinctive and high-quality flags that resonate with those seeking a patriotic touch for their homes.
+                                        <pre></pre>The process begins with precision, cutting premium pine strips to length and sanding them for a smooth finish. To infuse a rustic charm, every strip is carefully burned with a torch. The union, constructed separately from wider panels of premium pine, undergoes the same burning process. Staining follows, with red stain for the red stripes, blue stain for the union, and leaving the natural pine for the white stripes.
+                                        <pre></pre>Assembling the 13 stripes and the union requires finesse, utilizing glue and a pneumatic nail gun for secure adhesion. The addition of vertical slats on the back ensures alignment and contributes to the overall sturdiness, a refinement made over time to enhance the flag's durability and flatness.
+                                        <pre></pre>One unique aspect that sets my flags apart is the personalized touch. Laser engraving the name of the person or family, my signature, and the date on the back of the union establishes a profound connection between the flag and its owner. The final touch involves the stars, where a distinctive approach sets my flags apart. Using a stencil that precisely matches the union's size, I affix 3D printed stars into each spot, creating a visual and tactile accent that elevates the entire flag. The intricate design of the stars, reminiscent of military insignia, adds a unique and unparalleled dimension.
+                                        <pre></pre>This dedication to craftsmanship and innovation has carved a niche, with customers appreciating the surprise and delight of the 3D printed stars. Witnessing my flags find a place in others' homes is an honor, and I take pride in providing a service that celebrates patriotism and craftsmanship.
                                         </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            Matt & Lexi Rucinski
+                                            I sell these to many
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Built-in Plywood Structures
+                                            Decor
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1357,23 +1419,25 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Preschool Cubby Units</h2>
-                                    <p class="item-intro text-muted">August 2022</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Cubby 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Mahogany Side Tables</h2>
+                                    <p class="item-intro text-muted">July 2022</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/EndTables 2.jpg" alt="..." />
 
-                                    <p><pre></pre>Tasked by my cousin, then the principal at St. Mary's Catholic School of Waterford, I undertook the creation of 11 cubby units for their preschool students. Collaborating on size, specifications, and material considerations, we aimed to optimize space and materials, ensuring a practical and durable solution for the young students.
-                                        <pre></pre>The project kicked off with careful planning, determining the location and overall dimensions of each cubby unit. Creating a detailed parts list, I specified the unique components, their dimensions, and quantities, paving the way to calculate the necessary plywood sheets. After procuring the materials, I set up a makeshift workshop in my driveway, using a track saw to break down the plywood into manageable sizes before fine-tuning each piece on the table saw.
-                                        <pre></pre>Transporting an entire minivan full of plywood to the school, my dad and I transformed the exterior into a bustling workspace, staining each board with precision. Passersby witnessed our dedication as we worked outdoors, staining hundreds of boards to achieve a uniform and polished finish.
-                                        <pre></pre>The assembly process became a meticulous yet efficient routine, employing an assembly line approach to ensure consistency across all 11 cubby units. Wood screws brought each cubby to life, identical in size and structure. Once assembled, we maneuvered the cubbies around the school halls, strategically connecting them to strengthen the overall structure.
-                                        <pre></pre>The final touch involved adding hooks to each cubby, providing a practical solution for the students to hang their belongings. The assembly line nature of this project, building a substantial number of cubbies, was a testament to efficiency and precision. As the last screw was tightened, the satisfaction of knowing that over 40 students would soon have a designated space for their coats, bags, books, and lunches made the entire process incredibly rewarding.</p>
+                                    <p><pre></pre>Undertaking a commission from my sister-in-law's aunt, I embarked on the construction of two identical side tables, each a testament to precision woodworking and attention to detail. The project began with a reference photo provided by the client, which I skillfully translated into a scaled blueprint using digital tools.
+                                        <pre></pre>To bring the design to life, I printed out templates of both the tabletop and intricate leg geometry, artfully piecing together multiple sheets of paper to ensure proportional accuracy. With the blueprints in hand, I traced the designs onto a panel glue-up of rich mahogany boards, setting the stage for the creation of these elegant side tables. 
+                                        <pre></pre>Employing the bandsaw, I cut the boards just outside the traced lines, setting the stage for the shaping that followed. The intricate geometry of the legs posed both a challenge and a source of reward. Navigating the delicate curves required precision at every step, pushing the boundaries of my woodworking skills. The bandsaw proved indispensable in creating the initial forms, while the combination of the belt and spindle sanders allowed me to sneak up to the pencil line for unparalleled precision and accuracy.
+                                        <pre></pre>The complexity of the table legs presented both a challenge and a source of reward. The glue-up process, particularly the joining of the three legs to the tabletop, demanded a sophisticated clamping approach to achieve a seamless and stable connection.
+                                        <pre></pre>A personal touch was added to each table, as my signature was laser engraved on the underside of the tabletops—a subtle mark of the artisan responsible for these meticulously crafted pieces. The final touch involved the application of Danish oil, enhancing the natural beauty of the mahogany and providing a durable and lustrous finish.
+                                        <pre></pre>These mahogany side tables stand as a testament to the fusion of craftsmanship and technology, where digital precision meets hands-on skill. The result is not just functional furniture but a pair of timeless pieces that showcase the artistry and dedication invested in their creation.
+                                        </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            St. Mary's Catholic School of Waterford
+                                            Mary Ann Fortune
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Built-in Plywood Structures
+                                            Furniture
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1398,23 +1462,21 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Classroom Shelving Units</h2>
-                                    <p class="item-intro text-muted">August 2022</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Classroom 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Mahogany End Table</h2>
+                                    <p class="item-intro text-muted">July 2022</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mom Side Table.PNG" alt="..." />
 
-                                    <p><pre></pre>In conjunction with the cubby project at St. Mary's Catholic School of Waterford, I was also commissioned to craft shelving units for the classroom adjacent to the cubbies. Collaborating closely with the teacher, we measured the available space, discussed specific needs, and envisioned the desired outcome for the shelves.
-                                        <pre></pre>Employing a similar approach to the cubby project, I translated ideas into a sketch and developed a comprehensive parts list to determine material requirements. This considerate planning allowed for an efficient use of plywood, as I once again cut the sheets on my driveway, ensuring a consistent and polished finish.
-                                        <pre></pre>The assembly process mirrored the cubby project's assembly line nature, maintaining consistency in design and structure. The completed shelving units seamlessly fit into the already existing structure within the classroom. This approach not only maximized organization and storage but also created a cohesive and uniform aesthetic with the cubby units outside.
-                                        <pre></pre>By extending the same dedication and precision from the cubby project to the classroom shelving units, the entire space became a harmonious blend of functionality and design, catering to both the practical needs and aesthetic aspirations of the school environment.
-                                        </p>
+                                    <p>
+
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            St. Mary's Catholic School of Waterford
+                                            Eileen Martino
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Built-in Plywood Structures
+                                            Furniture
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1439,16 +1501,11 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Wooden American Flags</h2>
-                                    <p class="item-intro text-muted">February 2021-Present</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Big Flag 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Endgrain Cutting Boards</h2>
+                                    <p class="item-intro text-muted">December 2021-Present</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Endgrain 2.jpg" alt="..." />
 
-                                    <p><pre></pre>In early 2021, I embarked on a journey to craft wooden American flags, drawing inspiration from online tutorials and reference photos. My aim was to bring a personal touch to each flag, combining elements from existing designs with my unique flair. Since the inception of this project, my process has evolved and improved, resulting in distinctive and high-quality flags that resonate with those seeking a patriotic touch for their homes.
-                                        <pre></pre>The process begins with precision, cutting premium pine strips to length and sanding them for a smooth finish. To infuse a rustic charm, every strip is carefully burned with a torch. The union, constructed separately from wider panels of premium pine, undergoes the same burning process. Staining follows, with red stain for the red stripes, blue stain for the union, and leaving the natural pine for the white stripes.
-                                        <pre></pre>Assembling the 13 stripes and the union requires finesse, utilizing glue and a pneumatic nail gun for secure adhesion. The addition of vertical slats on the back ensures alignment and contributes to the overall sturdiness, a refinement made over time to enhance the flag's durability and flatness.
-                                        <pre></pre>One unique aspect that sets my flags apart is the personalized touch. Laser engraving the name of the person or family, my signature, and the date on the back of the union establishes a profound connection between the flag and its owner. The final touch involves the stars, where a distinctive approach sets my flags apart. Using a stencil that precisely matches the union's size, I affix 3D printed stars into each spot, creating a visual and tactile accent that elevates the entire flag. The intricate design of the stars, reminiscent of military insignia, adds a unique and unparalleled dimension.
-                                        <pre></pre>This dedication to craftsmanship and innovation has carved a niche, with customers appreciating the surprise and delight of the 3D printed stars. Witnessing my flags find a place in others' homes is an honor, and I take pride in providing a service that celebrates patriotism and craftsmanship.
-                                        </p>
+                                    <p>Use this area to describe your project.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1456,7 +1513,7 @@
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Decor
+                                            Food Preparation
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1513,9 +1570,171 @@
             </div>
         </div>
 
-
         <!-- Portfolio item 12 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Office Desk, Drawer, and Shelving Unit</h2>
+                                    <p class="item-intro text-muted">December 2020</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Office Desk 2.jpg" alt="..." />
+
+                                    <p><pre></pre>Embarking on a special commission from my cousin, I set out to create a custom office desk, drawer, and shelving unit for my dad's childhood home, infusing the project with sentimental value. Designing a piece that would span wall to wall and floor to ceiling in my dad's childhood bedroom required careful consideration and planning.
+                                        <pre></pre>Beginning with precise measurements of the room, I sketched a design that incorporated functional elements and aesthetic appeal. The challenge of determining the number and height of shelves on each side of the window, along with the design intricacies of the drawers flanking the desk, became a rewarding puzzle to solve.
+                                        <pre></pre>Translating the design into reality involved creating an organized parts list, detailing the dimensions of each unique piece required for construction. Calculating the necessary plywood sheets, I used a combination of a circular saw edge guide and a table saw to accurately cut the components to size. Sanding each board to a smooth finish, I then applied iron-on maple edge banding to conceal the plywood layers, providing a polished, natural wood appearance.
+                                        <pre></pre>Assembling the pieces required precision to ensure 90-degree corners and level shelves. Once the components were united, the entire unit received a carefully chosen paint finish. Adding another layer of complexity, the installation of drawer slides became a crucial step. Ensuring parallel alignment from the design phase through assembly, I meticulously incorporated slides for all four drawers and the cabinet carcass. This step, demanding precision and accuracy, guaranteed smooth opening and closing functionality for the drawers.
+                                        <pre></pre>This custom office unit not only serves a functional purpose but also stands as a labor of love, connecting the past with the present in the very room where my father once lived.
+                                        </p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Matt & Lexi Rucinski
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Built-in Plywood Structures, Storage Solutions
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 13 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Preschool Cubby Units</h2>
+                                    <p class="item-intro text-muted">August 2022</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Cubby 2.jpg" alt="..." />
+
+                                    <p><pre></pre>Tasked by my cousin, then the principal at St. Mary's Catholic School of Waterford, I undertook the creation of 11 cubby units for their preschool students. Collaborating on size, specifications, and material considerations, we aimed to optimize space and materials, ensuring a practical and durable solution for the young students.
+                                        <pre></pre>The project kicked off with careful planning, determining the location and overall dimensions of each cubby unit. Creating a detailed parts list, I specified the unique components, their dimensions, and quantities, paving the way to calculate the necessary plywood sheets. After procuring the materials, I set up a makeshift workshop in my driveway, using a track saw to break down the plywood into manageable sizes before fine-tuning each piece on the table saw.
+                                        <pre></pre>Transporting an entire minivan full of plywood to the school, my dad and I transformed the exterior into a bustling workspace, staining each board with precision. Passersby witnessed our dedication as we worked outdoors, staining hundreds of boards to achieve a uniform and polished finish.
+                                        <pre></pre>The assembly process became a meticulous yet efficient routine, employing an assembly line approach to ensure consistency across all 11 cubby units. Wood screws brought each cubby to life, identical in size and structure. Once assembled, we maneuvered the cubbies around the school halls, strategically connecting them to strengthen the overall structure.
+                                        <pre></pre>The final touch involved adding hooks to each cubby, providing a practical solution for the students to hang their belongings. The assembly line nature of this project, building a substantial number of cubbies, was a testament to efficiency and precision. As the last screw was tightened, the satisfaction of knowing that over 40 students would soon have a designated space for their coats, bags, books, and lunches made the entire process incredibly rewarding.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            St. Mary's Catholic School of Waterford
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Built-in Plywood Structures, Storage Solutions
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 14 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Classroom Shelving Units</h2>
+                                    <p class="item-intro text-muted">August 2022</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Classroom 2.jpg" alt="..." />
+
+                                    <p><pre></pre>In conjunction with the cubby project at St. Mary's Catholic School of Waterford, I was also commissioned to craft shelving units for the classroom adjacent to the cubbies. Collaborating closely with the teacher, we measured the available space, discussed specific needs, and envisioned the desired outcome for the shelves.
+                                        <pre></pre>Employing a similar approach to the cubby project, I translated ideas into a sketch and developed a comprehensive parts list to determine material requirements. This considerate planning allowed for an efficient use of plywood, as I once again cut the sheets on my driveway, ensuring a consistent and polished finish.
+                                        <pre></pre>The assembly process mirrored the cubby project's assembly line nature, maintaining consistency in design and structure. The completed shelving units seamlessly fit into the already existing structure within the classroom. This approach not only maximized organization and storage but also created a cohesive and uniform aesthetic with the cubby units outside.
+                                        <pre></pre>By extending the same dedication and precision from the cubby project to the classroom shelving units, the entire space became a harmonious blend of functionality and design, catering to both the practical needs and aesthetic aspirations of the school environment.
+                                        </p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            St. Mary's Catholic School of Waterford
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Built-in Plywood Structures, Storage Solutions
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 15 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Plywood Storage Rack</h2>
+                                    <p class="item-intro text-muted">January 2024</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Storage Rack.PNG" alt="..." />
+
+                                    <p>
+
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Personal Project
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Storage Solutions
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 16 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1557,8 +1776,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 13 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 17 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal17" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1600,8 +1819,50 @@
             </div>
         </div>
 
-        <!-- Portfolio item 14 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 18 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal18" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">3D Printed Topographic USA Map</h2>
+                                    <p class="item-intro text-muted">May 2022</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/States 1.jpg" alt="..." />
+
+                                    <p><pre></pre>In the pursuit of a captivating project, I stumbled upon a gem on Thingiverse.com—a topographic 3D model of the USA map. Intrigued by the prospect of crafting a unique representation of the mainland, I embarked on a 3D printing adventure.
+                                        <pre></pre>Utilizing blue, white, green, and yellow filaments, I brought each state to life layer by layer. The beauty of the design lay in the strategic use of colors, ensuring that no two adjacent states shared the same hue. After a careful sanding and filing process, the states seamlessly interlocked, forming a stunning jigsaw puzzle.
+                                        <pre></pre>For the canvas, eighth-inch particle board served as the ideal backer. After a dry fit, I traced the state outlines on the board and took the project outside the conventional mapping boundaries. Armed with painter's tape, I masked off the land sections, leaving the ocean exposed for a coat of blue spray paint.
+                                        <pre></pre>With the ocean complete, the 3D-printed states found their permanent home on the backer board, glued in place to recreate the topography of the mainland USA. A final touch was added with a printed compass, infusing a geographic essence into the masterpiece.
+                                        <pre></pre>Special thanks are due to Thingiverse user DerSchweizermaker for crafting these intricate 3D models that allowed me to turn a digital concept into a tangible, wall-mounted topographic tapestry. Now proudly displayed in my basement, this project stands as both a testament to technological creativity and a nod to the diverse landscapes that define the United States.
+                                        </p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Personal Project
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Decor
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 19 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal19" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1643,8 +1904,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 15 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 20 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal20" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1653,16 +1914,11 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">3D Printed Topographic USA Map</h2>
-                                    <p class="item-intro text-muted">May 2022</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/States 1.jpg" alt="..." />
+                                    <h2 class="text-uppercase">3D Printed Bowling Pin</h2>
+                                    <p class="item-intro text-muted">January 2021</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Bowling 2.jpg" alt="..." />
 
-                                    <p><pre></pre>In the pursuit of a captivating project, I stumbled upon a gem on Thingiverse.com—a topographic 3D model of the USA map. Intrigued by the prospect of crafting a unique representation of the mainland, I embarked on a 3D printing adventure.
-                                        <pre></pre>Utilizing blue, white, green, and yellow filaments, I brought each state to life layer by layer. The beauty of the design lay in the strategic use of colors, ensuring that no two adjacent states shared the same hue. After a careful sanding and filing process, the states seamlessly interlocked, forming a stunning jigsaw puzzle.
-                                        <pre></pre>For the canvas, eighth-inch particle board served as the ideal backer. After a dry fit, I traced the state outlines on the board and took the project outside the conventional mapping boundaries. Armed with painter's tape, I masked off the land sections, leaving the ocean exposed for a coat of blue spray paint.
-                                        <pre></pre>With the ocean complete, the 3D-printed states found their permanent home on the backer board, glued in place to recreate the topography of the mainland USA. A final touch was added with a printed compass, infusing a geographic essence into the masterpiece.
-                                        <pre></pre>Special thanks are due to Thingiverse user DerSchweizermaker for crafting these intricate 3D models that allowed me to turn a digital concept into a tangible, wall-mounted topographic tapestry. Now proudly displayed in my basement, this project stands as both a testament to technological creativity and a nod to the diverse landscapes that define the United States.
-                                        </p>
+                                    <p>Use this area to describe your project.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1685,8 +1941,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 16 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 21 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1695,16 +1951,11 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Folding Campfire Seat</h2>
-                                    <p class="item-intro text-muted">July 2019</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Campfire 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">3D Printed Four Player Chess Set</h2>
+                                    <p class="item-intro text-muted">August 2020</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chess Pieces 2.jpg" alt="..." />
 
-                                    <p><pre></pre>Inspired by the teachings of the YouTube channel "Woodworking for Mere Mortals," I embarked on a woodworking journey guided by the insightful and instructive videos of Steve Ramsey. Among the many projects that captured my attention was the Folding Campfire Seat, a functional and portable creation that beckoned me to recreate its ingenuity.
-                                        <pre></pre>Armed with freely provided plans and measurements, I printed out the necessary blueprints, ready to transform pine and cedar wood into a compact camping companion. The project, outlined in detail in Steve Ramsey's video <a href="https://www.youtube.com/watch?v=B_ECkRrphj8" target="_blank">here</a>, proved both accessible and exciting, perfectly aligned with the tools at my disposal.
-                                        <pre></pre>Executing precise cuts with the table and miter saw, I shaped the boards to fit the project's specifications. The clever folding mechanism, a hallmark of this design, demanded accuracy in creating dowel holes. Leveraging my trusty drill press, I ensured the dowels found their place, facilitating the seat's collapsible nature.
-                                        <pre></pre>The finishing touches involved sanding, transforming raw wood into a smooth and tactile masterpiece. A protective layer of boiled linseed oil not only safeguarded the wood but also accentuated the natural beauty of the grain.
-                                        <pre></pre>The result was a folding campfire seat, ready for adventures and camping excursions. Its portability and flat-folding design made it an ideal companion around the warmth of a campfire. As I reflect on this project, I extend a special thanks to Steve Ramsey for his years of dedication to sharing woodworking wisdom, turning novices into confident creators.
-                                        </p>
+                                    <p>Use this area to describe your project.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1712,7 +1963,7 @@
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Furniture
+                                            Custom Made, Game
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1727,8 +1978,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 17 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal17" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 22 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal22" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1770,8 +2021,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 18 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal18" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 23 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal23" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1780,11 +2031,16 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">3D Printed Bowling Pin</h2>
-                                    <p class="item-intro text-muted">January 2021</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Bowling 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Folding Campfire Seat</h2>
+                                    <p class="item-intro text-muted">July 2019</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Campfire 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Inspired by the teachings of the YouTube channel "Woodworking for Mere Mortals," I embarked on a woodworking journey guided by the insightful and instructive videos of Steve Ramsey. Among the many projects that captured my attention was the Folding Campfire Seat, a functional and portable creation that beckoned me to recreate its ingenuity.
+                                        <pre></pre>Armed with freely provided plans and measurements, I printed out the necessary blueprints, ready to transform pine and cedar wood into a compact camping companion. The project, outlined in detail in Steve Ramsey's video <a href="https://www.youtube.com/watch?v=B_ECkRrphj8" target="_blank">here</a>, proved both accessible and exciting, perfectly aligned with the tools at my disposal.
+                                        <pre></pre>Executing precise cuts with the table and miter saw, I shaped the boards to fit the project's specifications. The clever folding mechanism, a hallmark of this design, demanded accuracy in creating dowel holes. Leveraging my trusty drill press, I ensured the dowels found their place, facilitating the seat's collapsible nature.
+                                        <pre></pre>The finishing touches involved sanding, transforming raw wood into a smooth and tactile masterpiece. A protective layer of boiled linseed oil not only safeguarded the wood but also accentuated the natural beauty of the grain.
+                                        <pre></pre>The result was a folding campfire seat, ready for adventures and camping excursions. Its portability and flat-folding design made it an ideal companion around the warmth of a campfire. As I reflect on this project, I extend a special thanks to Steve Ramsey for his years of dedication to sharing woodworking wisdom, turning novices into confident creators.
+                                        </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1792,7 +2048,7 @@
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Decor
+                                            Furniture
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -1807,45 +2063,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 19 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal19" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">3D Printed Four Player Chess Set</h2>
-                                    <p class="item-intro text-muted">August 2020</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chess Pieces 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Personal Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Custom Made, Game
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio item 20 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal20" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 24 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal24" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1881,8 +2100,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 21 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 25 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal25" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1918,8 +2137,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 22 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal22" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 26 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal26" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1955,8 +2174,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 23 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal23" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 27 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal27" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -1991,9 +2210,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- Portfolio item 28 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal28" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Air Powered Steam Engine</h2>
+                                    <p class="item-intro text-muted">May 2019</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Steam2.jpg" alt="..." />
+
+                                    <p>Use this area to describe your project.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            High School Engineering Shop Project
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Shop Project
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <!-- Portfolio item 24 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal24" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 29 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal29" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2029,8 +2285,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 25 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal25" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 30 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2039,45 +2295,7 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Endgrain Cutting Boards</h2>
-                                    <p class="item-intro text-muted">December 2021-Present</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Endgrain 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            I sell these to many
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Food Preparation
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Portfolio item 26 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal26" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Mahoghany and Oak Toothbrush Holder</h2>
+                                    <h2 class="text-uppercase">Mahogany and Oak Toothbrush Holder</h2>
                                     <p class="item-intro text-muted">April 2020</p>.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Tooth 2.jpg" alt="..." />
 
@@ -2104,8 +2322,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 27 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal27" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 31 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal31" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2114,7 +2332,7 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Laser Engraved Mahoghany Sports Wall Plaque</h2>
+                                    <h2 class="text-uppercase">Laser Engraved Mahogany Sports Wall Plaque</h2>
                                     <p class="item-intro text-muted">June 2022</p>.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Packers 2.jpg" alt="..." />
 
@@ -2141,8 +2359,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 28 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal28" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 32 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal32" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2178,119 +2396,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 29 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal29" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Fourlegged Wooden Stool</h2>
-                                    <p class="item-intro text-muted">2019</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/B&W Stool 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Personal Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Furniture
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio item 30 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Custom Built 3D Printer Enclosure</h2>
-                                    <p class="item-intro text-muted">July 2020</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Enclosure 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Personal Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Shop Project
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio item 31 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal31" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Walnut and Maple Scrapwood Endgrain Cheeseboard</h2>
-                                    <p class="item-intro text-muted">July 2021</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Scrapwood 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Martino Family
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Food Preparation
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio item 32 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal32" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 33 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal33" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2312,43 +2419,6 @@
                                         <li>
                                             <strong>Category:</strong>
                                             Real-Life Replica
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio item 33 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal33" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Air Powered Steam Engine</h2>
-                                    <p class="item-intro text-muted">May 2019</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Steam2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            High School Engineering Shop Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Shop Project
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -2484,7 +2554,44 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Mahoghany Carpenter's Mallet</h2>
+                                    <h2 class="text-uppercase">Sheet Metal Boxes</h2>
+                                    <p class="item-intro text-muted">October 2018</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Sheet Metal 2.jpg" alt="..." />
+
+                                    <p>Use this area to describe your project.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            High School Metalshop Project
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Storage Solutions
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 38 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal38" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Mahogany Carpenter's Mallet</h2>
                                     <p class="item-intro text-muted">January 2020</p>.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mallet 2.jpg" alt="..." />
 
@@ -2511,8 +2618,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 38 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal38" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 39 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal39" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2548,43 +2655,6 @@
             </div>
         </div>
 
-        <!-- Portfolio item 39 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal39" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Sheet Metal Boxes</h2>
-                                    <p class="item-intro text-muted">October 2018</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Sheet Metal 2.jpg" alt="..." />
-
-                                    <p>Use this area to describe your project.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            High School Metalshop Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Storage Solutions
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Portfolio item 40 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal40" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -2595,19 +2665,19 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Melamine Storage Chest</h2>
-                                    <p class="item-intro text-muted">April 2016</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chest 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Walnut and Maple Scrapwood Endgrain Cheeseboard</h2>
+                                    <p class="item-intro text-muted">July 2021</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Scrapwood 2.jpg" alt="..." />
 
                                     <p>Use this area to describe your project.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            Personal Projects
+                                            Martino Family
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Storage Solutions
+                                            Food Preparation
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -2632,11 +2702,11 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Half Lap Shop Stool</h2>
-                                    <p class="item-intro text-muted">May 2020</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Half Lap Stool 2.jpg" alt="..." />
+                                    <h2 class="text-uppercase">Melamine Storage Chest</h2>
+                                    <p class="item-intro text-muted">April 2016</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chest 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project. </p>
+                                    <p>Use this area to describe your project.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2644,7 +2714,7 @@
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Shop Projects, Furniture
+                                            Storage Solutions
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -2706,6 +2776,43 @@
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
+                                    <h2 class="text-uppercase">Custom Built 3D Printer Enclosure</h2>
+                                    <p class="item-intro text-muted">July 2020</p>.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Enclosure 2.jpg" alt="..." />
+
+                                    <p>Use this area to describe your project.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Personal Project
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Shop Project
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio item 44 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal44" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="modal-body">
+                                    <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Stormtrooper Helmet Replica</h2>
                                     <p class="item-intro text-muted">In Progress</p>.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Stormtrooper 2.jpg" alt="..." />
@@ -2733,8 +2840,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 44 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal44" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 45 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal45" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -2770,8 +2877,8 @@
             </div>
         </div>
 
-        <!-- Portfolio item 45 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal45" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Portfolio item 46 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal46" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
