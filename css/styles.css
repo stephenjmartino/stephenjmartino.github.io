@@ -11422,11 +11422,21 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/Collage.png");
+  position: relative;
+  /*background-image: url("../assets/img/Collage.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  background-size: cover;
+  background-size: cover; */
+}
+/* Style adjustments for the carousel */
+#headerCarousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the carousel behind other content */
 }
   
 
