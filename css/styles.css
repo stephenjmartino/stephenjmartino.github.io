@@ -6093,7 +6093,7 @@ textarea.form-control-lg {
 }
 
 /* Hover effect for Step 6 */
-.timeline-inverted .timeline-image img:hover {
+#partOfJourneyCarousel .carousel-inner img:hover {
   border-color: var(--bs-pink) !important; /* Adjust the hover color as needed */
 }
 
