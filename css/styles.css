@@ -1176,6 +1176,7 @@ progress {
 */
 
 
+
 #services .col-md-4 .fa-stack {
   width: 250px; /* Adjust the width of the circular frame for Clarkson, Siena, and Shaker */
   height: 250px; /* Adjust the height of the circular frame */
@@ -1187,6 +1188,9 @@ progress {
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%; /* Ensure the image remains circular */
 }
+
+
+
 
   .col-md-5 {
     flex: 0 0 auto;
