@@ -78,59 +78,6 @@
             <!-- Include Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
 
-    <!-- Your custom JavaScript -->
-<script>
-    console.log('Script executed');
-
-    // Shuffle function to randomly rearrange array elements
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    // Array of image filenames (excluding the first one)
-    const imageFilenames = [
-        'old.jpg',
-        'image3.jpg',
-        'image4.jpg',
-        // Add more image filenames as needed
-    ];
-
-    // Path to the assets/img folder
-    const imagePath = 'assets/img/';
-
-    // Concatenate the path to each filename
-    const imagePaths = imageFilenames.map(filename => imagePath + filename);
-
-    console.log('First image:', firstImage);
-
-    // Shuffle the array of remaining image paths
-    const shuffledImages = shuffleArray([...imagePaths]);
-
-    console.log('Shuffled images:', shuffledImages);
-
-    // Populate the carousel with the first image and shuffled images
-    const carouselInner = document.querySelector('#headerCarousel .carousel-inner');
-
-    console.log('Carousel inner:', carouselInner);
-
-    // Add the first image
-    carouselInner.innerHTML += `<div class="carousel-item active"><img src="${firstImage}" class="d-block w-100" alt="First Image"></div>`;
-
-    // Add the remaining shuffled images
-    shuffledImages.forEach((imagePath) => {
-        const carouselItem = document.createElement('div');
-        carouselItem.className = 'carousel-item';
-        carouselItem.innerHTML = `<img src="${imagePath}" class="d-block w-100" alt="Image">`;
-        carouselInner.appendChild(carouselItem);
-    });
-</script>
-
-
-
         </header>
 
         <!-- About-->
@@ -142,7 +89,27 @@
                 <ul class="timeline">
 
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Wood Class.jpg" alt="..." /></div>
+                        <!-- Step 1: Taking Tech Classes -->
+                        <div id="woodworkingClassesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/about/TechClasses.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Wood Classes 1" height="250" width="250" style="border: 7px solid #faeb13;">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/about/TechClasses2.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Wood Classes 2" height="250" width="250" style="border: 7px solid #faeb13;">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/about/TechClasses3.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Wood Classes 3" height="250" width="250" style="border: 7px solid #faeb13;">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/about/TechClasses4.PNG" class="d-block mx-auto rounded-circle img-fluid" alt="Wood Classes 4" height="250" width="250" style="border: 7px solid #faeb13;">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/about/TechClasses5.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Wood Classes 5" height="250" width="250" style="border: 7px solid #faeb13;">
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Wood Class.jpg" alt="..." /></div>-->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2014-2020</h4>
@@ -152,8 +119,23 @@
                         </div>
                     </li>
 
+
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Youtube.png" alt="..." /></div>
+                                <!-- Step 2: Watching YouTube Tutorials -->
+                            <div id="youtubeTutorialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Youtube.png" class="d-block mx-auto rounded-circle img-fluid" alt="YouTube Tutorials 1" height="250" width="250" style="border: 7px solid #f40808;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Youtube.png" class="d-block mx-auto rounded-circle img-fluid" alt="YouTube Tutorials 2" height="250" width="250" style="border: 7px solid #f40808;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Youtube.png" class="d-block mx-auto rounded-circle img-fluid" alt="YouTube Tutorials 3" height="250" width="250" style="border: 7px solid #f40808;;">
+                                    </div>
+                                </div>
+                            </div>
+                        <!--<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Youtube.png" alt="..." /></div>-->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2017-Present</h4>
@@ -163,19 +145,55 @@
                         </div>
                     </li>
 
+                    
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Shop2.jpg" alt="..." /></div>
+                    <!-- Step 3: Building My Own Woodshop -->
+                            <div id="woodshopCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Shop.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Woodshop 1" height="250" width="250" style="border: 7px solid Green;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Shop.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Woodshop 2" height="250" width="250" style="border: 7px solid Green;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Shop.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Woodshop 3" height="250" width="250" style="border: 7px solid Green;">
+                                    </div>
+                                </div>
+                            </div>
+                        <!--<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Shop2.jpg" alt="..." /></div>-->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2018-Present</h4>
                                 <h4 class="subheading">Building My Own Woodshop</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">At this point I realized that a personal workshop was needed.  To address this need,  I revamped a neglected corner of my basement to create a functional workspace. I constructed a sturdy workbench and resolved significant lighting issues in order to lay the groundwork for the expansion of my woodworking. This pivotal step marked the beginning of a deliberate journey to grow both my tool repertoire and woodworking skills. Slowly but steadily, my workshop transformed from a modest corner into a dynamic space, enabling me to take on increasingly complex projects and continue to refine my craft.</p></div>
+                            <div class="timeline-body"><p class="text-muted">At this point I realized that a personal workshop was needed. To address this need, I revamped a neglected corner of my basement to create a functional workspace. I constructed a sturdy workbench and resolved significant lighting issues in order to lay the groundwork for the expansion of my woodworking. This pivotal step marked the beginning of a deliberate journey to grow both my tool repertoire and woodworking skills. Slowly but steadily, my workshop transformed from a modest corner into a dynamic space, enabling me to take on increasingly complex projects and continue to refine my craft.</p></div>
                         </div>
                     </li>
 
+
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Urban.jpg" alt="..." /></div>
+                        <!-- Step 4: Working at a Local Business -->
+                            <div id="localBusinessCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Urban.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Local Business 1" height="250" width="250" style="border: 7px solid #ee9715;">
+                                    </div>
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Urban2.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Local Business 2" height="250" width="250" style="border: 7px solid #ee9715;">
+                                    </div>
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Urban3.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Local Business 3" height="250" width="250" style="border: 7px solid #ee9715;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Urban4.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Local Business 4" height="250" width="250" style="border: 7px solid #ee9715;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Urban5.jpg" class="d-block mx-auto rounded-circle img-fluid" alt="Local Business 5" height="250" width="250" style="border: 7px solid #ee9715;">
+                                    </div>
+                                </div>
+                            </div>
+                        <!--<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Urban.jpg" alt="..." /></div>-->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2020-2021</h4>
@@ -185,8 +203,23 @@
                         </div>
                     </li>
 
+
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Future.jpeg" alt="..." /></div>
+                    <!-- Step 5: Planning New Projects -->
+                            <div id="planningProjectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/about/Future.jpeg" class="d-block mx-auto rounded-circle img-fluid" alt="Planning Projects 1" height="250" width="250" style="border: 7px solid #0f0ff3;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Future.jpeg" class="d-block mx-auto rounded-circle img-fluid" alt="Planning Projects 2" height="250" width="250" style="border: 7px solid #0f0ff3;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/about/Future.jpeg" class="d-block mx-auto rounded-circle img-fluid" alt="Planning Projects 3" height="250" width="250" style="border: 7px solid #0f0ff3;">
+                                    </div>
+                                </div>
+                            </div>
+                        <!--<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/Future.jpeg" alt="..." /></div>-->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Present</h4>
@@ -196,15 +229,13 @@
                         </div>
                     </li>
 
+
                     <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
-                                Be A Part
-                                <br />
-                                Of My
-                                <br />
-                                Journey!
-                            </h4>
+                        <!-- Step 6: Be a part of my journey -->   
+                        <div class="timeline-image text-center" style="width: 250px; height: 250px; overflow: hidden; margin: 0 auto; margin-left: -125px; display: flex; align-items: center; justify-content: center;">
+                            <img class="rounded-circle img-fluid" src="assets/img/about/PartOfJourney.PNG" alt="..." style="max-width: 100%; max-height: 100%; border: 5px solid purple;">
+                        </div>
+                        <div class="timeline-panel">  
                         </div>
                     </li>
 
@@ -220,14 +251,14 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <img class="img-siena" src="assets/img/shaker-bison.jpg" alt="..." />
+                            <img class="img-siena" src="assets/img/Shaker.jpg" alt="..." />
                         </span>
                         <h4 class="my-3">Shaker High School</h4>
                         <p class="text-muted">445 Watervliet Shaker Rd, Latham, NY 12110<br \><br \>Graduated June 2020</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <img class="img-siena" src="assets/img/siena.jpg" alt="..." />
+                            <img class="img-siena" src="assets/img/Siena.jpg" alt="..." />
                         </span>
                         <h4 class="my-3">Siena College</h4>
                         <p class="text-muted">515 Loudon Rd, Loudonville, NY 12211<br \><br \>Bachelors Degree in Applied Physics<br \>Minor in Data Science, Math, & Computer Science Expected May 2024<br>GPA: 3.54 / 4.0</p>
@@ -236,7 +267,8 @@
                         <span class="fa-stack fa-4x">
                             <img class="img-fluid" src="assets/img/Clarkson.png" alt="..." />
                         </span>
-                        <h4 class="my-3">Clarkson University</h4>
+                        <h4 class="my-3">
+                            Clarkson University</h4>
                         <p class="text-muted">80 Nott Terrace, Schenectady, NY 12308<br \><br \>Masters Degree in Mechanical Engineering<br \>Expected June 2025<br>GPA: 4.0 / 4.0</p>
                     </div>
                 </div>
@@ -306,7 +338,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/R2D2.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/A/R2D2/CoverPhoto.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">3D Printed Remote Controlled Life Size R2D2</div>
@@ -386,7 +418,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Mom Side Table.PNG" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/A/MomSideTable/Complete1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Mahogany End Table</div>
@@ -482,7 +514,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Storage Rack.PNG" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/A/PlywoodStorageRack/Decorated1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Plywood Storage Rack</div>
@@ -995,28 +1027,120 @@
                     <h2 class="section-heading text-uppercase">Hobbies</h2>
                     <h3 class="section-subheading text-muted">What I enjoy doing in my free time</h3>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/Outdoors.jpeg" alt="..." />
+                            <!-- Carousel for Outdoors -->
+                                <div id="outdoorsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                    <div class="carousel-inner">
+                                        <!-- Image 1 -->
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/Outdoors9.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 1">
+                                        </div>
+                                        <!-- Image 2 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors12.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 2">
+                                        </div>
+                                        <!-- Image 3 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors13.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 3">
+                                        </div>
+                                        <!-- Image 4 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors14.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 4">
+                                        </div>
+                                        <!-- Image 5 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors15.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 5">
+                                        </div>
+                                        <!-- Image 6 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors16.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 6">
+                                        </div>
+                                        <!-- Image 7 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors17.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 7">
+                                        </div>
+                                        <!-- Image 8 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors18.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 8">
+                                        </div>
+                                        <!-- Image 9 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors19.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 9">
+                                        </div>
+                                        <!-- Image 10 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Outdoors20.jpg" class="d-block mx-auto rounded-circle" alt="Outdoors Image 10">
+                                        </div>
+                                    </div>
+                                </div>
+                            <!---- <img class="mx-auto rounded-circle" src="assets/img/Outdoors.jpeg" alt="..." />-->
                             <h4>Being Outdoors</h4>
                             <p class="text-muted">Outside of my professional and personal pursuits, I find tremendous joy in the great outdoors, engaging in activities like running, biking, swimming, and road trips. While the summer months offer the perfect backdrop for these pursuits, I also enjoy skating during the winter months. Growing up, my childhood was infused with constant outdoor adventures, and I’m always on the lookout for new hobbies that get me outdoors. Some of the best moments come from simple outdoor gatherings with those close to me, creating memories that will last a lifetime.</p>
-                           
                         </div>
                     </div>
+
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/baseball.jpg" alt="..." />
+                            <!-- Carousel for Playing Sports -->
+                                <div id="sportsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                    <div class="carousel-inner">
+                                        <!-- Image 1 -->
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/baseball.jpg" class="d-block mx-auto rounded-circle" alt="Sports Image 1">
+                                        </div>
+                                        <!-- Image 2 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Sports11.png" class="d-block mx-auto rounded-circle" alt="Sports Image 2">
+                                        </div>
+                                        <!-- Image 3 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Sports12.png" class="d-block mx-auto rounded-circle" alt="Sports Image 3">
+                                        </div>
+                                        <!-- Image 4 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Sports13.jpg" class="d-block mx-auto rounded-circle" alt="Sports Image 4">
+                                        </div>
+                                        <!-- Image 5 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/Sports14.JPG" class="d-block mx-auto rounded-circle" alt="Sports Image 5">
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- <img class="mx-auto rounded-circle" src="assets/img/baseball.jpg" alt="..." />-->
                             <h4>Sports</h4>
                             <p class="text-muted">I played varsity baseball and ran cross country in high school and have been fortunate enough to continue playing on the club baseball team during my college years. Beyond the baseball diamond, I enjoy a variety of sports, including golf, pickleball, basketball, and pond hockey, as well as kanjam and cornhole. Additionally, during the winter months I enjoy ice skating. My love for sports isn't confined to playing alone; I'm an avid fan, cheering on the Pittsburgh Steelers, Pittsburgh Penguins, and Boston Red Sox.</p>
                         </div>
                     </div>
+
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/US History.jpeg" alt="..." />
+                            <!-- Carousel for US History -->
+                                <div id="ushistoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                    <div class="carousel-inner">
+                                        <!-- Image 1 -->
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/US History.jpeg" class="d-block mx-auto rounded-circle" alt="US History Image 1">
+                                        </div>
+                                        <!-- Image 2 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/USHistory11.jpg" class="d-block mx-auto rounded-circle" alt="US History Image 2">
+                                        </div>
+                                        <!-- Image 3 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/USHistory12.jpg" class="d-block mx-auto rounded-circle" alt="US History Image 3">
+                                        </div>
+                                        <!-- Image 4 -->
+                                        <div class="carousel-item">
+                                            <img src="assets/img/USHistory13.jpg" class="d-block mx-auto rounded-circle" alt="US History Image 4">
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--<img class="mx-auto rounded-circle" src="assets/img/US History.jpeg" alt="..." />-->
                             <h4>US History</h4>
                             <p class="text-muted">Beyond my active hobbies, I enjoy learning about the United States' role in the world, with a specific fascination for the monumental events of World War II. The battles fought during this pivotal period, and the men who shaped the course of those battles, have become subjects of deep interest for me. Diving into the complexities of World War II, I am drawn to the narratives of strategic decisions, the valor of those who fought, and the indomitable spirit of those who defined an era. This exploration is not merely a hobby but a quest to understand the multifaceted aspects that shaped the course of nations and the lives of countless individuals. The sacrifices made, the strategies employed, and the resilience displayed during this vital period serve as a lens through which I glean insights into the impact of historical events on the world we inhabit today.</p>
-                            
                         </div>
                     </div>
                 </div>
@@ -1107,7 +1231,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -1118,24 +1242,33 @@
                                     <!--<img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Epoxy 2.jpg" alt="..." />-->
 
                                     <!-- Image Carousel -->
-                                    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Epoxy 1.jpg" alt="Image 1" />
+                                    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Epoxy 1.jpg" alt="Image 1" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Epoxy 2.jpg" alt="Image 2" />
+                                            </div>
+                                            <!-- Add more carousel items for additional images -->
                                         </div>
-                                        <div class="carousel-item">
-                                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Epoxy 2.jpg" alt="Image 2" />
-                                        </div>
-                                        <!-- Add more carousel items for additional images -->
+                                        <!-- Carousel Controls -->
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        <!-- Carousel Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></li>
+                                            <li data-bs-target="#imageCarousel" data-bs-slide-to="1"></li>
+                                            <!-- Add more indicators for additional images -->
+                                        </ol>
                                     </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                                    
                                     </div>
 
                                     <p><pre></pre>Explore the fusion of craftsmanship and precision engineering in my epoxy river table, meticulously designed and executed for a seamless blend of natural aesthetics and precise craftsmanship. Crafted from walnut slabs, the table features an entrancing riverine design filled with mesmerizing blue-tinted epoxy, evoking the fluidity of watercourses. This table stands as a testament to dedicated construction.
@@ -1169,7 +1302,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -1210,7 +1343,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -1247,58 +1380,339 @@
             </div>
         </div>
 
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">3D Printed Remote Controlled Life Size R2D2</h2>
-                                    <p class="item-intro text-muted">June 2023</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/R2D2.jpg" alt="..." />
+                            <!-- Portfolio item 4 modal popup-->
+                    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6">
+                                            <div class="modal-body">
+                                                <!-- Project details-->
+                                                <h2 class="text-uppercase">3D Printed Remote Controlled Life Size R2D2</h2>
+                                                <p class="item-intro text-muted">September 2022-Present</p>
 
-                                    <p>
+                                                <!-- Include the R2D2 carousel -->
+                                                <div id="r2d2Carousel" class="carousel slide" data-bs-interval="false">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <!-- Video Slide 1 -->
+                                                            <video class="d-block mx-auto img-fluid" width="600" height="400" controls autoplay>
+                                                                <source src="assets/img/portfolio/A/R2D2/ShorterVid.mp4" type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                            <div class="carousel-caption">
+                                                                <h5>Video 1 Caption</h5>
+                                                                <p></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <!-- Video Slide 1 -->
+                                                            <video class="d-block mx-auto img-fluid" width="600" height="400" controls autoplay>
+                                                                <source src="assets/img/portfolio/A/R2D2/ShorterVid.mp4" type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                            <div class="carousel-caption">
+                                                                <h5>Video 1 Caption</h5>
+                                                                <p></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <!-- Image Slide 1 -->
+                                                            <img src="assets/img/portfolio/A/R2D2/Portfolio.jpg" class="d-block mx-auto img-fluid" alt="R2D2 Image 1">
+                                                            <div class="carousel-caption">
+                                                                <h5>Caption for Image 1</h5>
+                                                                <p>Additional details or description.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <!-- Image Slide 2 -->
+                                                            <img src="assets/img/portfolio/A/R2D2/ElectronicsFront.jpg" class="d-block mx-auto img-fluid" alt="R2D2 Image 2">
+                                                            <div class="carousel-caption">
+                                                                <h5>Image 2 Caption</h5>
+                                                                <p>Additional details or description.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <!-- Image Slide 3 -->
+                                                            <img src="assets/img/portfolio/A/R2D2/OtherPortfolio.jpg" class="d-block mx-auto img-fluid" alt="R2D2 Image 3">
+                                                            <div class="carousel-caption">
+                                                                <h5>Image 3 Caption</h5>
+                                                                <p>Additional details or description.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <!-- Image Slide 4 -->
+                                                            <img src="assets/img/portfolio/A/R2D2/ElectronicsBack.jpg" class="d-block mx-auto img-fluid" alt="R2D2 Image 4">
+                                                            <div class="carousel-caption">
+                                                                <h5>Image 4 Caption</h5>
+                                                                <p>Additional details or description.</p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Add more slides or videos as needed -->
+                                                    </div>
+                                                    <!-- Carousel Controls -->
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#r2d2Carousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#r2d2Carousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                    <!-- Custom Style to reduce the clickable area for carousel controls -->
+                                                    <style>
+                                                        .carousel-control-prev, .carousel-control-next {
+                                                            width: 7%;
+                                                            height: 4rem;
+                                                            font-size: 2rem;
+                                                            top: 50%; /* Position controls vertically at the center of the carousel */
+                                                            transform: translateY(-50%); /* Adjust vertical position using a negative margin */
+                                                        }
+                                                        /* Adjust the position of the carousel indicators */
+                                                        .carousel-indicators {
+                                                            bottom: -30px; /* Adjust this value as needed */
+                                                        }
+                                                    </style>
+                                                    <!-- Carousel Indicators -->
+                                                    <ol class="carousel-indicators">
+                                                        <!-- One indicator for each slide -->
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="2"></li>
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="3"></li>
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="4"></li>
+                                                        <li data-bs-target="#r2d2Carousel" data-bs-slide-to="5"></li>
+                                                        <!-- Add more indicators as needed -->
+                                                    </ol>
+                                                </div>
 
-                                    </p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Personal Project
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Real Life Replica
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
+                                                <!-- Project description -->
+                                                <p>
+                                                    <!-- Add your project description here -->
+                                                </p>
+                                                <ul class="list-inline">
+                                                    <li>
+                                                        <strong>Client:</strong>
+                                                        Personal Project
+                                                    </li>
+                                                    <li>
+                                                        <strong>Category:</strong>
+                                                        Real Life Replica
+                                                    </li>
+                                                </ul>
+                                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                    <i class="fas fa-times me-1"></i>
+                                                    Close Project
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Include Bootstrap JavaScript -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+
+                    <script>
+                        // JavaScript to start the video when its carousel slide is shown
+                        var r2d2Carousel = document.getElementById('r2d2Carousel');
+                        var r2d2Videos = r2d2Carousel.querySelectorAll('video');
+                        var currentR2D2Slide = 0;
+
+                        r2d2Carousel.addEventListener('slid.bs.carousel', function () {
+                            // Check if the active slide contains a video
+                            var activeSlide = r2d2Carousel.querySelector('.carousel-item.active');
+                            if (activeSlide && activeSlide.querySelector('video')) {
+                                // Play the video
+                                activeSlide.querySelector('video').play();
+                                currentR2D2Slide = r2d2Carousel.querySelector('.carousel-item.active').index();
+                            }
+
+                            // Pause other videos when moving away from their slides
+                            r2d2Videos.forEach(function(video) {
+                                if (video !== activeSlide.querySelector('video')) {
+                                    video.pause();
+                                }
+                            });
+                        });
+
+                        // JavaScript to reset the carousel to the beginning when a video ends
+                        r2d2Videos.forEach(function(video, index) {
+                            video.addEventListener('ended', function () {
+                                if (currentR2D2Slide < r2d2Videos.length - 1) {
+                                    // Move to the next slide (video)
+                                    r2d2Carousel.querySelector('.carousel-control-next').click();
+                                } else {
+                                    // Move the carousel to the first slide after the last video
+                                    r2d2Carousel.querySelector('.carousel-control-prev').click();
+                                    // Pause all videos when carousel reaches the first slide
+                                    r2d2Videos.forEach(function(video) {
+                                        video.pause();
+                                    });
+                                }
+                            });
+                        });
+
+                        // JavaScript to pause all videos when navigating to a different slide
+                        r2d2Carousel.addEventListener('slide.bs.carousel', function () {
+                            r2d2Videos.forEach(function(video) {
+                                video.pause();
+                            });
+                        });
+
+                        // JavaScript to pause all videos when the modal is closed
+                        var portfolioModalR2D2 = new bootstrap.Modal(document.getElementById('portfolioModal4'));
+
+                        portfolioModalR2D2._element.addEventListener('hidden.bs.modal', function () {
+                            r2d2Videos.forEach(function(video) {
+                                video.pause();
+                            });
+                        });
+                        
+                            portfolioModalR2D2._element.addEventListener('shown.bs.modal', function () {
+                                var activeSlide = r2d2Carousel.querySelector('.carousel-item.active');
+                                if (activeSlide && activeSlide.querySelector('video')) {
+                                    activeSlide.querySelector('video').play();
+                                    currentR2D2Slide = r2d2Carousel.querySelector('.carousel-item.active').index();
+                                }
+
+                                // Pause other videos when moving away from their slides
+                                r2d2Videos.forEach(function (video) {
+                                    if (video !== activeSlide.querySelector('video')) {
+                                        video.pause();
+                                    }
+                                });
+                            });
+                    </script>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- Portfolio item 5 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Machined Luke Skywalker's Lightsaber</h2>
-                                    <p class="item-intro text-muted">June 2023</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />
+                                    <p class="item-intro text-muted">June 2023</p>
+                                    <!--<img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Metal Luke 1.jpg" alt="..." />-->
+
+                                            <!-- Include the lightsaber carousel -->
+                                    <div id="lightsaberCarousel" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <!-- Image Slide 1 -->
+                                                <img src="assets/img/portfolio/A/LukeMetal/1.jpg" class="d-block mx-auto img-fluid" alt="Luke's Lightsaber 1">
+                                                <div class="carousel-caption">
+                                                    <h5>Day 1 completion of the lightsaber project</h5>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Image Slide 2 -->
+                                                <img src="assets/img/portfolio/A/LukeMetal/2.jpg" class="d-block mx-auto img-fluid" alt="Luke's Lightsaber 2">
+                                                <div class="carousel-caption">
+                                                    <h5>Image 2 Caption</h5>
+                                                    <p>Additional details or description.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Image Slide 3 -->
+                                                <img src="assets/img/portfolio/A/LukeMetal/3.jpg" class="d-block mx-auto img-fluid" alt="Luke's Lightsaber 3">
+                                                <div class="carousel-caption">
+                                                    <h5>Image 3 Caption</h5>
+                                                    <p>Additional details or description.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Video Slide 1 -->
+                                                <video class="d-block mx-auto img-fluid" width="600" height="400" controls autoplay>
+                                                    <source src="assets/img/portfolio/A/LukeMetal/Vid1.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <div class="carousel-caption">
+                                                    <h5>Video 1 Caption</h5>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Video Slide 2 -->
+                                                <video class="d-block mx-auto img-fluid" width="600" height="400" controls autoplay>
+                                                    <source src="assets/img/portfolio/A/LukeMetal/Vid2.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <div class="carousel-caption">
+                                                    <h5>Video 2 Caption</h5>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Video Slide 3 -->
+                                                <video class="d-block mx-auto img-fluid" width="600" height="400" controls autoplay>
+                                                    <source src="assets/img/portfolio/A/LukeMetal/Vid3.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <div class="carousel-caption">
+                                                    <h5>Video 3 Caption</h5>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <!-- Image Slide 4 (Added after the 3rd video) -->
+                                                <img src="assets/img/portfolio/A/LukeMetal/4.jpg" class="d-block mx-auto img-fluid" alt="Additional Image">
+                                                <div class="carousel-caption">
+                                                    <h5>Image 4 Caption</h5>
+                                                    <p>Additional details or description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Carousel Controls -->
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#lightsaberCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#lightsaberCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        <!-- Custom Style to reduce the clickable area for carousel controls -->
+                                        <style>
+                                            .carousel-control-prev, .carousel-control-next {
+                                                width: 7%;
+                                                height: 4rem;
+                                                font-size: 2rem;
+                                                top: 50%; /* Position controls vertically at the center of the carousel */
+                                                transform: translateY(-50%); /* Adjust vertical position using a negative margin */
+                                            }
+                                            /* Adjust the position of the carousel indicators */
+                                            .carousel-indicators {
+                                                bottom: -30px; /* Adjust this value as needed */
+                                            }
+                                        </style>
+                                        <!-- Carousel Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <!-- One indicator for each slide -->
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="0" class="active"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="1"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="2"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="3"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="4"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="5"></li>
+                                            <li data-bs-target="#lightsaberCarousel" data-bs-slide-to="6"></li>
+                                        </ol>
+                                    </div>
 
                                     <p><pre></pre>Embark on a journey to a galaxy far, far away with the realization of a childhood dream: a meticulously handcrafted, all-metal replica of Luke Skywalker's iconic green lightsaber from Return of the Jedi (1983). The inception of this project found its catalyst in a lifelong passion for Star Wars, with the pursuit of authenticity driving the desire to create a lightsaber that transcends mere toy replicas.
                                         <pre></pre>The opportunity to bring this vision to life arose during a machining class at the Capital Region BOCES facility near the Albany Airport, facilitated by the generous guidance of Mr. Kody Skeals. His willingness to extend access to the metal lathes and milling machines outside of regular class hours, coupled with invaluable mentorship, transformed this project into a remarkable learning experience. 
@@ -1321,6 +1735,64 @@
                                         Close Project
                                     </button>
                                 </div>
+                                    <!-- Include Bootstrap JavaScript -->
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+                            <script>
+                                // JavaScript to start the video when its carousel slide is shown
+                                var lightsaberCarousel = document.getElementById('lightsaberCarousel');
+                                var lightsaberVideos = lightsaberCarousel.querySelectorAll('video');
+                                var currentSlide = 0;
+
+                                lightsaberCarousel.addEventListener('slid.bs.carousel', function () {
+                                    // Check if the active slide contains a video
+                                    var activeSlide = lightsaberCarousel.querySelector('.carousel-item.active');
+                                    if (activeSlide && activeSlide.querySelector('video')) {
+                                        // Play the video
+                                        activeSlide.querySelector('video').play();
+                                        currentSlide = lightsaberCarousel.querySelector('.carousel-item.active').index();
+                                    }
+
+                                    // Pause other videos when moving away from their slides
+                                    lightsaberVideos.forEach(function(video) {
+                                        if (video !== activeSlide.querySelector('video')) {
+                                            video.pause();
+                                        }
+                                    });
+                                });
+
+                                // JavaScript to reset the carousel to the beginning when a video ends
+                                lightsaberVideos.forEach(function(video, index) {
+                                    video.addEventListener('ended', function () {
+                                        if (currentSlide < lightsaberVideos.length - 1) {
+                                            // Move to the next slide (video)
+                                            lightsaberCarousel.querySelector('.carousel-control-next').click();
+                                        } else {
+                                            // Move the carousel to the first slide after the last video
+                                            lightsaberCarousel.querySelector('.carousel-control-prev').click();
+                                            // Pause all videos when carousel reaches the first slide
+                                            lightsaberVideos.forEach(function(video) {
+                                                video.pause();
+                                            });
+                                        }
+                                    });
+                                });
+
+                                // JavaScript to pause all videos when navigating to a different slide
+                                lightsaberCarousel.addEventListener('slide.bs.carousel', function () {
+                                    lightsaberVideos.forEach(function(video) {
+                                        video.pause();
+                                    });
+                                });
+
+                                // JavaScript to pause all videos when the modal is closed
+                                var portfolioModal = new bootstrap.Modal(document.getElementById('portfolioModal5'));
+
+                                portfolioModal._element.addEventListener('hidden.bs.modal', function () {
+                                    lightsaberVideos.forEach(function(video) {
+                                        video.pause();
+                                    });
+                                });
+                            </script>
                             </div>
                         </div>
                     </div>
@@ -1332,18 +1804,17 @@
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Veteran's Flag Display Case</h2>
-                                    <p class="item-intro text-muted">December 2023</p>.</p>
+                                    <p class="item-intro text-muted">December 2023</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Grandpa Flag2.jpg" alt="..." />
 
-                                    <p>
-
+                                    <p><pre></pre>Description
                                     </p>
                                     <ul class="list-inline">
                                         <li>
@@ -1371,14 +1842,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Wooden American Flags</h2>
-                                    <p class="item-intro text-muted">February 2021-Present</p>.</p>
+                                    <p class="item-intro text-muted">February 2021-Present</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Big Flag 2.jpg" alt="..." />
 
                                     <p><pre></pre>In early 2021, I embarked on a journey to craft wooden American flags, drawing inspiration from online tutorials and reference photos. My aim was to bring a personal touch to each flag, combining elements from existing designs with my unique flair. Since the inception of this project, my process has evolved and improved, resulting in distinctive and high-quality flags that resonate with those seeking a patriotic touch for their homes.
@@ -1413,14 +1884,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Mahogany Side Tables</h2>
-                                    <p class="item-intro text-muted">July 2022</p>.</p>
+                                    <p class="item-intro text-muted">July 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/EndTables 2.jpg" alt="..." />
 
                                     <p><pre></pre>Undertaking a commission from my sister-in-law's aunt, I embarked on the construction of two identical side tables, each a testament to precision woodworking and attention to detail. The project began with a reference photo provided by the client, which I skillfully translated into a scaled blueprint using digital tools.
@@ -1456,18 +1927,51 @@
         <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Mahogany End Table</h2>
-                                    <p class="item-intro text-muted">July 2022</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mom Side Table.PNG" alt="..." />
-
-                                    <p>
-
+                                    <p class="item-intro text-muted">July 2022</p>
+                                    <!--<img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mom Side Table.PNG" alt="..." />-->
+                                    <!-- Image Carousel -->
+                                    <div id="momsidetableCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/MomSideTable/Complete2.jpg" alt="Image 1" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/MomSideTable/Complete3.jpg" alt="Image 2" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/MomSideTable/CADFILE.PNG" alt="Image 3" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/MomSideTable/Complete4.jpg" alt="Image 4" />
+                                            </div>
+                                            <!-- Add more carousel items for additional images -->
+                                        </div>
+                                        <!-- Carousel Controls -->
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#momsidetableCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#momsidetableCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        <!-- Carousel Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-bs-target="#momsidetableCarousel" data-bs-slide-to="0" class="active"></li>
+                                            <li data-bs-target="#momsidetableCarousel" data-bs-slide-to="1"></li>
+                                            <li data-bs-target="#momsidetableCarousel" data-bs-slide-to="2"></li>
+                                            <li data-bs-target="#momsidetableCarousel" data-bs-slide-to="3"></li>
+                                            <!-- Add more indicators for additional images -->
+                                        </ol>
+                                    </div>
+                                    <p><pre></pre>Description
                                     </p>
                                     <ul class="list-inline">
                                         <li>
@@ -1495,17 +1999,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Endgrain Cutting Boards</h2>
-                                    <p class="item-intro text-muted">December 2021-Present</p>.</p>
+                                    <p class="item-intro text-muted">December 2021-Present</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Endgrain 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1532,14 +2037,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Laser Engraved Epoxy Sports Wall Plaque</h2>
-                                    <p class="item-intro text-muted">June 2022</p>.</p>
+                                    <p class="item-intro text-muted">June 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Placque 1.jpg" alt="..." />
 
                                     <p><pre></pre>Transforming my bedroom wall, I embarked on the creation of a unique sports wall plaque that replaced my bulletin board above the desk. The foundation of this project was a 2 by 4 foot particle board back, a canvas awaiting a fusion of craftsmanship and sports fervor.
@@ -1574,14 +2079,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Office Desk, Drawer, and Shelving Unit</h2>
-                                    <p class="item-intro text-muted">December 2020</p>.</p>
+                                    <p class="item-intro text-muted">December 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Office Desk 2.jpg" alt="..." />
 
                                     <p><pre></pre>Embarking on a special commission from my cousin, I set out to create a custom office desk, drawer, and shelving unit for my dad's childhood home, infusing the project with sentimental value. Designing a piece that would span wall to wall and floor to ceiling in my dad's childhood bedroom required careful consideration and planning.
@@ -1616,14 +2121,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Preschool Cubby Units</h2>
-                                    <p class="item-intro text-muted">August 2022</p>.</p>
+                                    <p class="item-intro text-muted">August 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Cubby 2.jpg" alt="..." />
 
                                     <p><pre></pre>Tasked by my cousin, then the principal at St. Mary's Catholic School of Waterford, I undertook the creation of 11 cubby units for their preschool students. Collaborating on size, specifications, and material considerations, we aimed to optimize space and materials, ensuring a practical and durable solution for the young students.
@@ -1657,14 +2162,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Classroom Shelving Units</h2>
-                                    <p class="item-intro text-muted">August 2022</p>.</p>
+                                    <p class="item-intro text-muted">August 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Classroom 2.jpg" alt="..." />
 
                                     <p><pre></pre>In conjunction with the cubby project at St. Mary's Catholic School of Waterford, I was also commissioned to craft shelving units for the classroom adjacent to the cubbies. Collaborating closely with the teacher, we measured the available space, discussed specific needs, and envisioned the desired outcome for the shelves.
@@ -1698,18 +2203,55 @@
         <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Plywood Storage Rack</h2>
-                                    <p class="item-intro text-muted">January 2024</p>.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Storage Rack.PNG" alt="..." />
-
-                                    <p>
-
+                                    <p class="item-intro text-muted">January 2024</p>
+                                    <!--<img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Storage Rack.PNG" alt="..." />-->
+                                    <!-- Image Carousel -->
+                                    <div id="PlywoodStorageRackCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/PlywoodStorageRack/Assembled1.jpg" alt="Image 1" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/PlywoodStorageRack/Decorated2.jpg" alt="Image 2" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/PlywoodStorageRack/Assembled2.jpg" alt="Image 3" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/PlywoodStorageRack/CADFILE.PNG" alt="Image 4" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/A/PlywoodStorageRack/Assembled3.jpg" alt="Image 5" />
+                                            </div>
+                                            <!-- Add more carousel items for additional images -->
+                                        </div>
+                                        <!-- Carousel Controls -->
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        <!-- Carousel Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide-to="0" class="active"></li>
+                                            <li data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide-to="1"></li>
+                                            <li data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide-to="2"></li>
+                                            <li data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide-to="3"></li>
+                                            <li data-bs-target="#PlywoodStorageRackCarousel" data-bs-slide-to="4"></li>
+                                            <!-- Add more indicators for additional images -->
+                                        </ol>
+                                    </div>
+                                    <p><pre></pre>Description
                                     </p>
                                     <ul class="list-inline">
                                         <li>
@@ -1737,14 +2279,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">All Metal Saruman's Staff from LOTR</h2>
-                                    <p class="item-intro text-muted">July 2023</p>.</p>
+                                    <p class="item-intro text-muted">July 2023</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Saruman 2.jpeg" alt="..." />
 
                                     <p><pre></pre>Immersed in the mesmerizing world of the extended Lord of the Rings trilogy, the character Saruman and his iconic staff left an indelible mark on my creative spirit. Inspired by Christopher Lee's portrayal, and spurred on by the urging of my sister, I decided to embark on the ambitious journey of bringing Saruman's staff to life.
@@ -1780,14 +2322,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal17" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Custom Designed & 3D Printed BMW Logo</h2>
-                                    <p class="item-intro text-muted">September 2023</p>.</p>
+                                    <p class="item-intro text-muted">September 2023</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/BMW.jpg" alt="..." />
 
                                     <p><pre></pre>Captivated by the iconic BMW logo, I embarked on a project to bring this symbol of automotive elegance to life in grand proportions. The vision was to design and construct a giant version of the BMW logo, a testament to my admiration for the brand, regardless of the possibility of owning a BMW car in the future.
@@ -1823,14 +2365,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal18" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Topographic USA Map</h2>
-                                    <p class="item-intro text-muted">May 2022</p>.</p>
+                                    <p class="item-intro text-muted">May 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/States 1.jpg" alt="..." />
 
                                     <p><pre></pre>In the pursuit of a captivating project, I stumbled upon a gem on Thingiverse.com—a topographic 3D model of the USA map. Intrigued by the prospect of crafting a unique representation of the mainland, I embarked on a 3D printing adventure.
@@ -1865,14 +2407,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal19" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Backyard Golf Course Tee Markers</h2>
-                                    <p class="item-intro text-muted">June 2022</p>.</p>
+                                    <p class="item-intro text-muted">June 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Tees 2.png" alt="..." />
 
                                     <p><pre></pre>Transforming a backyard into the appropriately named Fairways at Farley, a chip and putt golf haven, my cousin embarked on a journey to infuse the spirit of golf into my dad’s family home. Established in 2014, this 18-hole course, adorned with real bunkers, carefully defined fairways and rough, is a homage to the love of the game and the nostalgia of childhood memories on Farley Drive.
@@ -1908,17 +2450,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal20" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Bowling Pin</h2>
-                                    <p class="item-intro text-muted">January 2021</p>.</p>
+                                    <p class="item-intro text-muted">January 2021</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Bowling 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1945,17 +2488,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Four Player Chess Set</h2>
-                                    <p class="item-intro text-muted">August 2020</p>.</p>
+                                    <p class="item-intro text-muted">August 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chess Pieces 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -1982,14 +2526,14 @@
         <div class="portfolio-modal modal fade" id="portfolioModal22" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Classic Barstool</h2>
-                                    <p class="item-intro text-muted">July 2019</p>.</p>
+                                    <p class="item-intro text-muted">July 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Barstool 2.jpg" alt="..." />
 
                                     <p><pre></pre>Inspired once again by the insightful tutorials of Woodworking for Mere Mortals on YouTube, I delved into the art of constructing a classic barstool. This project posed its challenges, especially in crafting the four 1.5-inch by 1.5-inch legs, each set at a compound angle of 7 degrees in both directions.
@@ -2025,7 +2569,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal23" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -2067,7 +2611,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal24" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -2077,7 +2621,8 @@
                                     <p class="item-intro text-muted">December 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Quarto 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2104,17 +2649,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal25" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Laser Engraved Step Stool</h2>
-                                    <p class="item-intro text-muted">November 2019</p>.</p>
+                                    <p class="item-intro text-muted">November 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Step Stool 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2141,7 +2687,7 @@
         <div class="portfolio-modal modal fade" id="portfolioModal26" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
@@ -2151,7 +2697,8 @@
                                     <p class="item-intro text-muted">2018, 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Slide 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2178,17 +2725,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal27" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Laser Engraved Cherry and Maple Cheeseboard</h2>
-                                    <p class="item-intro text-muted">March 2018</p>.</p>
+                                    <p class="item-intro text-muted">March 2018</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Cherry Board 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2215,17 +2763,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal28" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Air Powered Steam Engine</h2>
-                                    <p class="item-intro text-muted">May 2019</p>.</p>
+                                    <p class="item-intro text-muted">May 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Steam2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2252,17 +2801,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal29" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Fireplace Mantle</h2>
-                                    <p class="item-intro text-muted">January 2020</p>.</p>
+                                    <p class="item-intro text-muted">January 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mantle.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2289,17 +2839,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Mahogany and Oak Toothbrush Holder</h2>
-                                    <p class="item-intro text-muted">April 2020</p>.</p>
+                                    <p class="item-intro text-muted">April 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Tooth 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2326,17 +2877,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal31" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Laser Engraved Mahogany Sports Wall Plaque</h2>
-                                    <p class="item-intro text-muted">June 2022</p>.</p>
+                                    <p class="item-intro text-muted">June 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Packers 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2363,17 +2915,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal32" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Customizable Laser Engraved Plaque</h2>
-                                    <p class="item-intro text-muted">August 2022</p>.</p>
+                                    <p class="item-intro text-muted">August 2022</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Wedding 1.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2400,17 +2953,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal33" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Wooden Thor's Hammer Replica</h2>
-                                    <p class="item-intro text-muted">December 2019</p>.</p>
+                                    <p class="item-intro text-muted">December 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Thor 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2437,17 +2991,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal34" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Wooden Luke Skywalker Lightsaber Replica</h2>
-                                    <p class="item-intro text-muted">July 2019</p>.</p>
+                                    <p class="item-intro text-muted">July 2019</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Luke 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2474,17 +3029,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal35" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Han Solo Blaster Replica</h2>
-                                    <p class="item-intro text-muted">July 2020</p>.</p>
+                                    <p class="item-intro text-muted">July 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Han 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2511,17 +3067,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal36" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Metal Engineering Hammers</h2>
-                                    <p class="item-intro text-muted">November 2018</p>.</p>
+                                    <p class="item-intro text-muted">November 2018</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Metal Hammers 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2548,17 +3105,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal37" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Sheet Metal Boxes</h2>
-                                    <p class="item-intro text-muted">October 2018</p>.</p>
+                                    <p class="item-intro text-muted">October 2018</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Sheet Metal 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2585,17 +3143,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal38" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Mahogany Carpenter's Mallet</h2>
-                                    <p class="item-intro text-muted">January 2020</p>.</p>
+                                    <p class="item-intro text-muted">January 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Mallet 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2622,17 +3181,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal39" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Autographed Jersey Case</h2>
-                                    <p class="item-intro text-muted">September 2017</p>.</p>
+                                    <p class="item-intro text-muted">September 2017</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Jersey 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2659,17 +3219,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal40" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Walnut and Maple Scrapwood Endgrain Cheeseboard</h2>
-                                    <p class="item-intro text-muted">July 2021</p>.</p>
+                                    <p class="item-intro text-muted">July 2021</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Scrapwood 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2696,17 +3257,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal41" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Melamine Storage Chest</h2>
-                                    <p class="item-intro text-muted">April 2016</p>.</p>
+                                    <p class="item-intro text-muted">April 2016</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chest 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2733,17 +3295,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal42" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Window and Screen Storage Organizer</h2>
-                                    <p class="item-intro text-muted">June 2020</p>.</p>
+                                    <p class="item-intro text-muted">June 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/SIP 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2770,17 +3333,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal43" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Custom Built 3D Printer Enclosure</h2>
-                                    <p class="item-intro text-muted">July 2020</p>.</p>
+                                    <p class="item-intro text-muted">July 2020</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Enclosure 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2807,17 +3371,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal44" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">3D Printed Stormtrooper Helmet Replica</h2>
-                                    <p class="item-intro text-muted">In Progress</p>.</p>
+                                    <p class="item-intro text-muted">In Progress</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Stormtrooper 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2844,17 +3409,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal45" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Four Player Chess Board</h2>
-                                    <p class="item-intro text-muted">In Progress</p>.</p>
+                                    <p class="item-intro text-muted">In Progress</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Chess Board 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2881,17 +3447,18 @@
         <div class="portfolio-modal modal fade" id="portfolioModal46" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Epoxy and Wood Chess Boards</h2>
-                                    <p class="item-intro text-muted">In Progress</p>.</p>
+                                    <p class="item-intro text-muted">In Progress</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/EpoxyChess 2.jpg" alt="..." />
 
-                                    <p>Use this area to describe your project.</p>
+                                    <p><pre></pre>Description
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -2915,7 +3482,7 @@
         </div>
 
         <!-- Bootstrap core JS-->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
