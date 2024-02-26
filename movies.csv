@@ -18,7 +18,6 @@ The 39 Steps,95,2110352997
 1917,118,1202701165
 The A-Team,118,1131494896
 Abe Lincoln in Illinois,111,2646027560
-About Schmidt,125,1001469700
 About Time,123,826558304
 Absence of Malice,116,1218563331
 The Accountant,127,786997484
@@ -138,7 +137,6 @@ The Big Chill,105,1026951817
 The Big Clock,95,1149386340
 The Big Country,166,1342046747
 Big Fat Liar,85,1686868724
-The Big Lebowski,116,682755995
 The Big Short,130,1002669828
 The Big Sleep,113,1640029812
 The Bigamist,78,1204532908
@@ -149,6 +147,7 @@ Black Angel,80,1528433022
 Black Hawk Down,144,2035672859
 Black Panther,134,2325275640
 Black Robe,100,1191044058
+BlackBerry,119,3749606449
 Blackboard Jungle,100,1630191811
 Blades of Glory,93,787200457
 Blast from the Past,112,1102309946
@@ -191,7 +190,6 @@ The Browning Version,90,1139433606
 The Buddy Holly Story,114,1205371437
 A Bug's Life,94,932102877
 Bull Durham,107,1096563382
-Burn After Reading,95,734040276
 Bus Stop,94,1273078363
 Butch Cassidy and the Sundance Kid,110,967387912
 Caddyshack,98,2225074351
@@ -207,6 +205,7 @@ Captain America: Civil War,147,2410088673
 Captain America: The First Avenger,124,912758447
 Captain America: The Winter Soldier,135,1037610219
 Captain Blood,119,1718078584
+Captain Marvel,123,2871499112
 Captain Phillips,134,1184927946
 Captains Courageous,116,2047556940
 Carefree,83,1403809088
@@ -358,6 +357,7 @@ Eternal Sunshine of the Spotless Mind,107,734123692
 Evelyn Prentice,78,1300528984
 Everyone's Hero,87,769044083
 Everything Everywhere All at Once,139,3274705108
+Ex Machina,108,1750755070
 Executive Decision,132,972150185
 The Exorcist,123,1687956448
 The Expendables,103,783275850
@@ -370,7 +370,7 @@ Fantastic Four,105,1008254682
 Fargo,98,1542945317
 Fast & Furious,106,1613687618
 Fast & Furious 6,131,2089425459
-Fast & Furious Presents: Hobbs & Shaw,129,3972556641
+The Fast and the Furious,106,2655832925
 Fast Five,130,1466218216
 The Fate of the Furious,135,2234399305
 Father of the Bride,92,1471774279
@@ -422,6 +422,7 @@ Frequency,118,1017643011
 Fried Green Tomatoes,136,1874840892
 From Here to Eternity,118,1867047738
 From Russia with Love,115,1141583721
+From the Terrace,144,2950711474
 The Front Page,100,2217035308
 Frozen,102,873312194
 The Fugitive,130,1505958741
@@ -487,7 +488,6 @@ Greystone,158,2703658296
 Gridiron Gang,122,1777833029
 Groundhog Day,101,1016082598
 Grown Ups,102,1506279339
-Grown Ups 2,100,1555220705
 Guadalcanal Diary,93,1567490695
 Guardians of the Galaxy,120,1988828715
 Guardians of the Galaxy Vol. 2,135,2218551684
@@ -502,7 +502,6 @@ Guys and Dolls,149,1065018791
 Hacksaw Ridge,140,1065110629
 "Hail, Caesar!",101,1472575722
 Hamlet,153,1755450575
-The Hangover,107,683800761
 Hannah and Her Sisters,106,1620595668
 Happy Gilmore,91,628374327
 Harry Potter and the Deathly Hallows: Part 2,130,4052039752
@@ -516,7 +515,6 @@ The Heiress,115,1883856207
 Hell or High Water,102,812742500
 Hellboy,132,1883893847
 Henry V,136,2154936778
-Her,125,1991522644
 Hercules,92,890026932
 Here Comes Mr. Jordan,89,1951299593
 Here Today,113,2240217418
@@ -538,12 +536,12 @@ Hoot,90,1299520012
 Hot Fuzz,120,1198237802
 Houseboat,109,1222668942
 How Green Was My Valley,119,1396261979
-How to Steal an Airplane,87,889973373
 The Hucksters,118,2659091005
 Hud,111,912447941
 The Hunt for Red October,135,1397317825
 The Hurricane,103,6043391028
 The Hurt Locker,130,838971754
+Hustle,118,1510605461
 The Hustler,134,924354810
 I Am a Fugitive from a Chain Gang,92,2219925982
 I Can Only Imagine,110,762062599
@@ -578,6 +576,7 @@ Intermezzo,69,1994429013
 Invasion of the Body Snatchers,80,967842714
 Invincible,103,1138822753
 The Invisible Man,71,1885919515
+The Iron Claw,132,940872514
 The Iron Giant,86,696748304
 Iron Man,126,1160856537
 Iron Man 2,124,1191496554
@@ -639,7 +638,6 @@ Kit Kittredge: An American Girl,100,1475575528
 Knives Out,130,1813907456
 Knute Rockne All American,97,1632285671
 Lady and the Tramp,76,485455450
-Lady Bird,92,1499744256
 The Lady Eve,93,1145078229
 Lady for a Day,92,1312973448
 The Lady Vanishes,95,1173738970
@@ -813,8 +811,7 @@ The Nativity Story,100,1142497696
 The Negotiator,139,2344363070
 Never Say Never Again,134,1258379262
 Night at the Museum,108,1230421274
-Night at the Museum: Battle of the Smithsonian,104,949432923
-Night at the Museum: Secret of the Tomb,97,967324750
+Night at the Museum: Battle of the Smithsonian,104,786858151
 A Night at the Opera,91,2086787294
 The Night My Number Came Up,95,2331542086
 The Night of the Hunter,93,1342974268
@@ -854,6 +851,7 @@ On the Waterfront,107,1393301848
 One Foot in Heaven,107,516373906
 One Hour with You,77,1799587944
 One Hundred and One Dalmatians,79,1050675230
+One Life,99,1621985564
 "One, Two, Three",108,3147906485
 Only Angels Have Wings,124,5245859810
 Only the Lonely,104,1110130802
@@ -1012,7 +1010,6 @@ The Sea Wolf,99,1688554265
 Seabiscuit,140,1609976451
 The Search,103,2851979787
 The Searchers,118,1709313767
-Searching,102,1751792885
 Searching for Bobby Fischer,110,1162382907
 Secretariat,122,1113758450
 Seems Like Old Times,97,3546690083
@@ -1023,6 +1020,7 @@ A Serious Man,105,1849274913
 Serpico,130,1520721369
 The Set-Up,75,1817789579
 Seven Days from Now,97,2967392775
+The Seven Year Itch,104,628597248
 Shadow of a Doubt,107,1321789038
 Shadowlands,131,819833498
 The Shaggy Dog,98,817098853
@@ -1090,7 +1088,6 @@ A Star Is Born,112,1443188304
 A Star Is Born,175,2218446009
 A Star Is Born,135,2327436874
 Star Trek,126,1241780469
-Star Trek Beyond,122,940614730
 Star Trek II: The Wrath of Khan,116,927812895
 Star Trek III: The Search for Spock,105,895468919
 Star Trek Into Darkness,132,1332059996
@@ -1101,12 +1098,12 @@ Star Wars: Episode III - Revenge of the Sith,140,1215243031
 Star Wars: Episode IV - A New Hope,124,1114952773
 Star Wars: Episode V - The Empire Strikes Back,127,1090842207
 Star Wars: Episode VI - Return of the Jedi,134,1342384982
+Star Wars: Episode VII - The Force Awakens,138,2828422455
 Star Wars: The Clone Wars,98,2911953973
 Stars in My Crown,91,4769510390
 The Stars Look Down,103,2180962336
 Starsky & Hutch,100,840092140
 State of the Union,122,2013752669
-Step Brothers,105,577292664
 Steve Jobs,122,962416294
 The Sting,129,2000655359
 The Story of Alexander Graham Bell,98,2848676846
@@ -1124,8 +1121,6 @@ Summertime,100,1314921159
 Sunset Blvd.,110,1045389512
 Super 8,111,877094575
 Super Size Me,99,1114182364
-Super Troopers,100,681779546
-Superbad,118,732390116
 Superman/Batman: Public Enemies,67,1159283900
 Suspicion,99,1679566637
 Sweet Home Alabama,109,1876009722
@@ -1232,10 +1227,11 @@ The War of the Worlds,85,1090360415
 War Room,120,901952843
 The Way Back,108,1043105538
 We Are Marshall,131,1511870944
-Wedding Crashers,127,576809324
 Wedding Present,81,1362722214
+What to Expect When You're Expecting,109,1714082610
 When Harry Met Sally...,95,980251349
 When the Game Stands Tall,115,1329780994
+Where the Red Fern Grows,96,706098420
 While You Were Sleeping,103,1091536006
 Whiplash,106,851939105
 White Heat,113,1686434325
@@ -1248,10 +1244,10 @@ Wind River,106,727043413
 Witness,112,1338193077
 Witness for the Prosecution,116,1070860685
 The Wizard of Oz,101,1893664882
+The Wolf Man,69,1172797618
 The Woman in the Window,99,1619826734
 Woman of the Year,114,1703836628
 The Women,133,2058855104
-Won't You Be My Neighbor?,94,1608149295
 Working Girl,113,1128649275
 The World Is Not Enough,128,1210459625
 World Trade Center,129,1882407386
@@ -1266,6 +1262,7 @@ You Can't Cheat an Honest Man,78,2089614758
 You Can't Take It with You,126,5703854467
 You Only Live Twice,116,1000936378
 You Were Never Lovelier,97,1341190252
+You'll Never Get Rich,88,853135237
 Young Frankenstein,105,966902495
 Young Mr. Lincoln,100,1245011970
 The Young Philadelphians,136,905674434
