@@ -306,6 +306,31 @@ table {
   border-collapse: collapse;
 }
 
+/* Styling for the captions to ensure proper spacing */
+.captionModal {
+  margin-top: 30px; /* Adjust this value as needed */
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-body .img-fluid {
+  margin-bottom: 1px; /* Adjust this value as needed */
+}
+
+/* Styling for the VIDEO captions to ensure proper spacing */
+.captionModalVid {
+  margin-top: -8px; /* Adjust this value as needed */
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-body .img-fluid {
+  margin-bottom: 1px; /* Adjust this value as needed */
+}
+
+
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
