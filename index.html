@@ -1812,7 +1812,7 @@
                                 </li>
                             </ul>
                             <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                <i class="fas fa-xmark me-1"></i>
+                                <i class="fas fa-times me-1"></i>
                                 Close Project
                             </button>
                         </div>
@@ -1822,7 +1822,19 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var portfolioModal = document.getElementById('portfolioModal5');
+        var videos = portfolioModal.querySelectorAll('.video-control');
 
+        portfolioModal.addEventListener('hidden.bs.modal', function () {
+            videos.forEach(function (video) {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    });
+</script>
 
         <!-- Portfolio item 6 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
