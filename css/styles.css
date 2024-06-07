@@ -235,7 +235,7 @@ sup {
 }
 
 a {
-  color: #ffc800;
+  color: #ff0000;
   text-decoration: underline;
 }
 a:hover {
@@ -11571,7 +11571,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #703804;
+    background-color: teal;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -11908,7 +11908,7 @@ body, html {
 
 /* Navbar height (ensure this is consistent with your actual navbar height) */
 .navbar {
-  height: 90px; /* Adjust according to your navbar height */
+  height: 70px; /* Adjust according to your navbar height */
   margin-bottom: 0;
 }
 
@@ -11921,7 +11921,7 @@ body, html {
   overflow: hidden;
   background: black;
   z-index: 1; /* Ensure it stays behind the navbar and other content */
-  top: -180px; /* Offset to account for navbar height */
+  top: -202px; /* Offset to account for navbar height */
 }
 
 /* Style the video to be responsive */
