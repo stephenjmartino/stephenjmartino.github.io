@@ -11897,6 +11897,8 @@ header.masthead .masthead-heading {
   }
 
 
+
+
 /* Reset any default margins and padding */
 body, html {
   margin: 0;
@@ -11906,7 +11908,7 @@ body, html {
 
 /* Navbar height (ensure this is consistent with your actual navbar height) */
 .navbar {
-  height: 100px; /* Adjust according to your navbar height */
+  height: 90px; /* Adjust according to your navbar height */
   margin-bottom: 0;
 }
 
@@ -11932,10 +11934,26 @@ body, html {
   object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
 }
 
+/* Hide mobile video by default */
+.mobile-video {
+  display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  /* Show mobile video and hide desktop video on mobile devices */
+  .desktop-video {
+      display: none;
+  }
+  .mobile-video {
+      display: block;
+  }
+}
+
 /* Text overlay styling */
 .text-overlay {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white; /* Text color */
@@ -11943,6 +11961,7 @@ body, html {
   padding: 10px;
   background: rgba(255, 255,255, 0.5); /* Semi-transparent background */
   border-radius: 10px; /* Rounded corners */
+  z-index: 2;
 }
 
 .masthead-subheading {
