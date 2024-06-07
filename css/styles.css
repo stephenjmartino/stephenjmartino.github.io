@@ -11895,6 +11895,79 @@ header.masthead .masthead-heading {
   .timeline > li.timeline-inverted > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
+
+
+/* Reset any default margins and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body and html take full height */
+}
+
+/* Navbar height (ensure this is consistent with your actual navbar height) */
+.navbar {
+  height: 100px; /* Adjust according to your navbar height */
+  margin-bottom: 0;
+}
+
+/* Container to ensure video covers the full viewport */
+.video-container {
+  position: relative; /* Relative position to allow normal flow with page scrolling */
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%; /* Adjust the aspect ratio as needed */
+  overflow: hidden;
+  background: black;
+  z-index: 1; /* Ensure it stays behind the navbar and other content */
+  top: -180px; /* Offset to account for navbar height */
+}
+
+/* Style the video to be responsive */
+.responsive-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
+}
+
+/* Text overlay styling */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Text color */
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255,255, 0.5); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.masthead-subheading {
+  font-size: 2em; /* Adjust as needed */
+}
+
+.masthead-heading {
+  font-size: 1.5em; /* Adjust as needed */
+  margin-top: 10px;
+}
+
+.masthead-heading.text-uppercase {
+  text-transform: uppercase;
+}
+
+
+/* Adjust the margin or padding of the next section */
+.containerabout {
+  margin-top: -350px; /* Adjust this value as needed */
+}
+
+
+
+
+
 }
 .team-member {
   margin-bottom: 3rem;

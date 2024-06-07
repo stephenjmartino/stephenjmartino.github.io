@@ -38,8 +38,6 @@
                         <li class="nav-item"><a class="nav-link" href="assets/resume.pdf" target="_blank">Resumé</a></li>
                         <li class="nav-item"><a class="nav-link" href="assets/My Tools.pdf" target="_blank">Tool List</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSekWCByEFeH3DT9d0s8onA1Brjz0CnPTDJGaO-2rAq4VuydPw/viewform?usp=pp_url" target="_blank">Flag Quote Form</a></li>
-                        
-
                     </ul>
                 </div>
             </div>
@@ -47,42 +45,29 @@
 
         <!-- Masthead-->
         <header class="masthead">
+            <!-- Video Section -->
+            <div class="video-container">
+                <video class="responsive-video" autoplay loop muted>
+                    <source src="assets/img/vid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-            <!-- Carousel Section -->
-    <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- First image always the same -->
-            <div class="carousel-item active">
-                <img src="assets/img/Collage.png" class="d-block w-100" alt="First Image">
-            </div>
-            <!-- Remaining images will be dynamically added here using JavaScript -->
-        </div>
-
-        <!-- Carousel Navigation Buttons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-            <div class="container">
-                <div class="masthead-subheading">Stephen J Martino</div>
-                <div class="masthead-heading text-uppercase">Woodworker<br \>College Student<br />Future Mechanical Engineer</div>              
-                <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>  -->
+                <!-- Text Overlay -->
+                <div class="text-overlay">
+                    <div class="masthead-subheading"><br>Stephen J Martino</div>
+                    <div class="masthead-heading text-uppercase">Woodworker<br>College Student<br>Future Mechanical Engineer</div>
+                    <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a> -->
+                </div>
             </div>
 
             <!-- Include Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
-
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
         </header>
+
 
         <!-- About-->
         <section class="page-section" id="about">
-            <div class="container">
+            <div class="containerabout">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">My Journey in Woodworking<br \><br \></h2>
                 </div>
@@ -419,7 +404,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/Big Flag 1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Wooden American Flags</div>
@@ -2070,18 +2055,237 @@
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/Close.png" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Wooden American Flags</h2>
                                     <p class="item-intro text-muted">February 2021-Present</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/Big Flag 2.jpg" alt="..." />
-
                                     <p><pre></pre>In early 2021, I began to craft wooden American flags, drawing inspiration from online tutorials and reference photos. My aim was to bring a personal touch to each flag, combining elements from existing designs with a unique flair. Since the inception of this project, my process has evolved and improved, resulting in distinctive and high-quality flags that resonate with those seeking a patriotic touch for their homes.
                                         <pre></pre>The process begins with premium pine strips which I sand to a smooth finish. To infuse a rustic look, every strip is carefully burned with a torch. The union, constructed separately from a wider panel of premium pine, undergoes the same burning process. Staining follows, with red stain for the red stripes, blue stain for the union, and leaving the natural pine for the white stripes.
                                         <pre></pre>Assembling the 13 stripes and the union requires finesse, utilizing glue and a pneumatic nail gun for secure adhesion. The addition of vertical slats on the back ensures alignment and contributes to the overall sturdiness, a refinement made over time to enhance the flag's durability and flatness.
                                         <pre></pre>One unique aspect that sets my flags apart is the personalized touch. Laser engraving the name of the person or family, my signature, and the date on the back of the union establishes a connection between the flag and its owner. The final touch involves the stars, where a distinctive approach sets my flags apart. Using a stencil that precisely matches the union's size, I affix 3D printed stars into each spot, creating a visual and tactile accent. The intricate design of the stars, reminiscent of military insignia, adds a unique dimension that is unparalleled in the wooden flag market.
                                         </p>
+                                    
+                                    <!-- Gallery -->
+                                    <div class="row" id="gallery">
+                                        <!-- Gallery images with captions -->
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-2 mb-4">
+                                            <figure>
+                                                <img src="assets/img/portfolio/A/WoodAmericanFlags/1.jpg" class="img-fluid" alt="Flags">
+                                                <p class="captionModal">Front view 1</p>
+                                            </figure>
+                                        </div>
+                                    </div>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
