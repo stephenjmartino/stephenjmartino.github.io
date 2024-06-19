@@ -4085,7 +4085,7 @@ textarea.form-control-lg {
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -11910,6 +11910,7 @@ body, html {
 .navbar {
   height: 70px; /* Adjust according to your navbar height */
   margin-bottom: 0;
+  position: fixed
 }
 
 /* Container to ensure video covers the full viewport */
@@ -11980,7 +11981,7 @@ body, html {
 
 /* Adjust the margin or padding of the next section */
 .containerabout {
-  margin-top: -250px; /* Adjust this value as needed */
+  margin-top: -80px; /* Adjust this value as needed */
 }
 
 
@@ -11991,7 +11992,7 @@ body, html {
   height: 0;
   padding-bottom: 50%; /* Adjust the aspect ratio as needed */
   overflow: hidden;
-  margin-top: -210px; /* Adjust the margin-top value to position the image below the navbar */
+  margin-top: -202px; /* Adjust the margin-top value to position the image below the navbar */
 }
 
 
