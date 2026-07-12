@@ -3,10 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Handmade wooden American flags built locally by Stephen Martino for a limited summer batch." />
   <title>Handmade Wooden American Flags | Stephen Martino</title>
-</head>
-<body>
-  <h1>Handmade Wooden American Flags</h1>
-  <p>This page is under construction.</p>
-</body>
-</html>
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-deep: #071b2d;
+      --red: #a83b3b;
+      --red-dark: #842d2d;
+      --cream: #f7f0df;
+      --paper: #fffaf0;
+      --gold: #b68a4a;
+      --wood: #8a633d;
+      --ink: #263746;
+      --muted: #5f6d78;
+      --line: rgba(16, 42, 67, 0.14);
+      --shadow: 0 18px 45px rgba(7, 27, 45, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      color: var(--navy-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.08;
+    }
+    h1 { margin-bottom: 1rem; font-size: clamp(2.65rem, 9vw, 5.75rem); letter-spacing: -0.045em; }
+    h2 { margin-bottom: 0.85rem; font-size: clamp(2rem, 6vw, 3.45rem); letter-spacing: -0.025em; }
+    h3 { margin-bottom: 0.55rem; font-size: 1.35rem; }
+    p { margin-bottom: 1rem; }
+
+    .container { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 2rem; height: 2px; background: var(--gold); content: ""; }
+    .section { padding: 4.75rem 0; }
+    .section-heading { max-width: 680px; margin-bottom: 2rem; }
+    .section-heading p { color: var(--muted); font-size: 1.08rem; }
+
+    .site-header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.1rem 0;
+      color: white;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; }
+    .nav-link { font-size: 0.85rem; font-weight: 700; text-underline-offset: 0.25rem; }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 25%, rgba(182, 138, 74, 0.22), transparent 28rem),
+        linear-gradient(135deg, var(--navy-deep), var(--navy));
+    }
+    .hero::after {
+      position: absolute;
+      right: -12rem;
+      bottom: -18rem;
+      width: 38rem;
+      height: 38rem;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5rem rgba(255,255,255,0.025), 0 0 0 10rem rgba(255,255,255,0.02);
+      content: "";
+    }
