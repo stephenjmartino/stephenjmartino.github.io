@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Handmade wooden American flags built locally by Stephen Martino for a limited summer batch." />
+  <meta name="description" content="Handmade wooden American flags built locally by Stephen Martino. Join the interest list for an upcoming batch." />
   <title>Handmade Wooden American Flags | Stephen Martino</title>
+  <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="flag_assets/Flag_favicon.png" />
   <style>
     :root {
       --navy: #102a43;
@@ -73,7 +75,8 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; }
-    .nav-link { font-size: 0.85rem; font-weight: 700; text-underline-offset: 0.25rem; }
+    .nav-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.55rem 1rem; }
+    .nav-link { font-size: 0.78rem; font-weight: 700; text-underline-offset: 0.25rem; }
 
     .hero {
       position: relative;
@@ -133,48 +136,37 @@
       box-shadow: 0 28px 65px rgba(0,0,0,0.27);
       backdrop-filter: blur(8px);
     }
-    .flag-art {
-      position: relative;
-      aspect-ratio: 37 / 19.5;
-      overflow: hidden;
-      border: 9px solid #6f4b2f;
-      border-radius: 12px;
-      background: repeating-linear-gradient(to bottom, #a73739 0 7.69%, #efe2c7 7.69% 15.38%);
-      box-shadow: inset 0 0 38px rgba(77,45,24,0.32);
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 16px;
     }
-    .flag-art::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 41%;
-      height: 53.8%;
-      background:
-        radial-gradient(circle, #efe2c7 0 1.2px, transparent 1.5px) 0 0 / 12px 11px,
-        #193a5a;
-      content: "";
-    }
-    .flag-art::after { position: absolute; inset: 0; background: linear-gradient(105deg, transparent, rgba(255,255,255,0.13), transparent 60%); content: ""; }
     .hero-card p { margin: 0.85rem 0 0.1rem; color: rgba(255,255,255,0.73); font-size: 0.82rem; text-align: center; }
 
-    .gallery { display: grid; gap: 1rem; }
+    .gallery { column-count: 1; column-gap: 1rem; }
     .gallery-card {
-      min-height: 235px;
-      display: grid;
-      place-items: center;
+      margin: 0 0 1rem;
       overflow: hidden;
+      break-inside: avoid;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, rgba(16,42,67,0.82), rgba(16,42,67,0.45)),
-        repeating-linear-gradient(90deg, #9d754c 0 30px, #8c633e 30px 60px);
-      color: white;
+      background: white;
       box-shadow: var(--shadow);
     }
-    .gallery-card:nth-child(2) { background: linear-gradient(145deg, rgba(168,59,59,0.82), rgba(168,59,59,0.42)), repeating-linear-gradient(0deg, #a77e53 0 25px, #8a633d 25px 50px); }
-    .gallery-card:nth-child(3) { background: linear-gradient(145deg, rgba(7,27,45,0.72), rgba(7,27,45,0.38)), repeating-linear-gradient(90deg, #b08a5e 0 35px, #957048 35px 70px); }
-    .photo-placeholder { padding: 1rem; text-align: center; }
-    .photo-placeholder strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; }
-    .photo-placeholder span { color: rgba(255,255,255,0.73); font-size: 0.85rem; }
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 0.75rem 1rem;
+      color: var(--navy-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+    }
 
     .details { background: var(--paper); }
     .detail-grid { display: grid; gap: 1rem; }
@@ -258,8 +250,8 @@
 
     @media (min-width: 680px) {
       .container { width: min(1120px, calc(100% - 3rem)); }
-      .gallery { grid-template-columns: 1.45fr 1fr; }
-      .gallery-card:first-child { grid-row: span 2; min-height: 490px; }
+      .nav-link { font-size: 0.85rem; }
+      .gallery { column-count: 2; }
       .detail-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .notes-grid, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .price-panel { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
@@ -267,6 +259,7 @@
 
     @media (min-width: 960px) {
       .section { padding: 6.5rem 0; }
+      .gallery { column-count: 3; }
       .hero-grid { grid-template-columns: 1.3fr 0.7fr; }
       .hero-card { transform: rotate(2deg); }
       .detail-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -283,7 +276,10 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="/">Stephen Martino</a>
-      <a class="nav-link" href="#details">Flag details</a>
+      <nav class="nav-actions" aria-label="Page links">
+        <a class="nav-link" href="#details">Flag details</a>
+        <a class="nav-link" href="MountingTemplate.pdf" target="_blank" rel="noopener">Printable mounting template</a>
+      </nav>
     </div>
   </header>
 
@@ -291,15 +287,15 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Limited local summer batch</span>
+          <span class="eyebrow">Celebrating America's 250th Anniversary</span>
           <h1 id="hero-title">Handmade Wooden American Flags</h1>
-          <p class="subtitle">Built locally by Stephen Martino</p>
-          <p class="hero-note">A timeless piece for the 4th of July—and a meaningful way to mark America’s 250th anniversary coming up. Each flag is made by hand, one at a time.</p>
-          <a class="button" href="GOOGLE_FORM_LINK_HERE">Join the interest list</a>
+          <p class="subtitle">Built in NY's Capital Region by Stephen Martino</p>
+          <p class="hero-note">I’m putting together a run of handmade wooden American flags. Each flag is built by hand, lightly torched, stained, finished with a gloss clear coat, and made ready to hang. The stars are 3D printed and raised from the surface, giving the flag a unique dimensional look that helps it stand out from typical wooden flags.</p>
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Join the interest list</a>
         </div>
-        <div class="hero-card" aria-label="Stylized preview of a handmade wooden American flag">
-          <div class="flag-art" role="img" aria-label="Wooden American flag preview with red and cream stripes and a navy star field"></div>
-          <p>Handmade • Lightly distressed • Ready to hang</p>
+        <div class="hero-card">
+          <img class="hero-photo" src="flag_assets/MainFlag2.jpg" alt="Handmade wooden American flag displayed outdoors" />
+          <p>Locally sourced • Handmade • Ready to hang</p>
         </div>
       </div>
     </section>
@@ -307,14 +303,39 @@
     <section class="section" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Made by hand</span>
+          <span class="eyebrow">Photo Gallery</span>
           <h2 id="gallery-title">Built to feel at home</h2>
-          <p>Real product photos are coming soon. These spaces are ready for workshop, detail, and finished-room photography.</p>
+          <p>A closer look at the craftsmanship, finish, and character of these handmade wooden flags.</p>
         </div>
         <div class="gallery">
-          <div class="gallery-card" role="img" aria-label="Placeholder for a full view photo of the handmade wooden American flag"><div class="photo-placeholder"><strong>Finished flag</strong><span>Photo coming soon</span></div></div>
-          <div class="gallery-card" role="img" aria-label="Placeholder for a close-up photo showing the distressed wood finish"><div class="photo-placeholder"><strong>Wood &amp; finish</strong><span>Detail photo coming soon</span></div></div>
-          <div class="gallery-card" role="img" aria-label="Placeholder for a photo showing the French cleat hanging hardware"><div class="photo-placeholder"><strong>Ready to hang</strong><span>Hardware photo coming soon</span></div></div>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag3.jpg" alt="Finished handmade wooden American flag in the workshop" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag5.jpg" alt="Handmade wooden American flag displayed on a stone wall" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag4.jpg" alt="Handmade wooden American flag resting on a workbench" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag6.jpg" alt="Two finished wooden American flags displayed together" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video demonstrating the French cleat mounting system">
+              <source src="flag_assets/FrenchCleatVid.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+            <figcaption class="gallery-caption">Animation showing how the french cleat gets mounted on the wall</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag8.jpg" alt="Vertical wooden American flag displayed beside a staircase" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag7.jpg" alt="Clear-coated wooden American flag on a workbench" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag9.jpg" alt="Rear Side of Flag showing french cleat system" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
     </section>
@@ -324,13 +345,13 @@
         <div class="section-heading">
           <span class="eyebrow">Flag details</span>
           <h2 id="details-title">Substantial, but easy to hang</h2>
-          <p>Each wood flag is lightly distressed, stained, and clear coated for a warm, lasting finish.</p>
+          <p>The finished size is a good balance: large enough to stand out, but still easy to place in a garage, office, workshop, camp, or living space.</p>
         </div>
         <div class="detail-grid">
           <article class="card spec-card"><div class="spec-number">19.5</div><div><h3>Inches tall</h3><p>A balanced profile for a statement wall.</p></div></article>
           <article class="card spec-card"><div class="spec-number">37</div><div><h3>Inches wide</h3><p>Wide enough to make an impact without taking over the room.</p></div></article>
           <article class="card spec-card"><div class="spec-number">1.5</div><div><h3>Inches thick</h3><p>Built with real depth and a sturdy feel.</p></div></article>
-          <article class="card spec-card"><div class="spec-number">&lt;10</div><div><h3>Pounds</h3><p>Under 10 pounds for manageable installation.</p></div></article>
+          <article class="card spec-card"><div class="spec-number">&lt;10</div><div><h3>Pounds</h3><p>Light enough for straightforward wall mounting.</p></div></article>
         </div>
         <div class="notes-grid">
           <article class="card">
@@ -353,19 +374,19 @@
       <div class="container">
         <div class="price-panel">
           <div>
-            <span class="eyebrow">Simple pricing</span>
-            <h2 id="pricing-title">One handmade flag</h2>
+            <span class="eyebrow">straightforward Pricing</span>
+            <h2 id="pricing-title">One Handmade Flag</h2>
             <div class="price">$250</div>
             <p class="price-label">total price</p>
           </div>
           <div>
             <div class="payment-breakdown">
-              <div class="payment-row"><span>Deposit when orders officially open</span><strong>$50</strong></div>
-              <div class="payment-row"><span>Due at pickup or delivery</span><strong>$200</strong></div>
-              <div class="payment-row"><span>Accepted</span><strong>Venmo, PayPal, or cash</strong></div>
+              <div class="payment-row"><span>Deposit to reserve a flag once orders open</span><strong>$50</strong></div>
+              <div class="payment-row"><span>Remaining balance due at pickup or delivery</span><strong>$200</strong></div>
+              <div class="payment-row"><span>Accepted payment options</span><strong>Venmo, PayPal, or Cash</strong></div>
             </div>
-            <p class="fine-print">Filling out the form does not require payment today and does not lock you into an order. It simply lets me know you’re interested.</p>
-            <a class="button" href="GOOGLE_FORM_LINK_HERE">Fill out the interest form</a>
+            <p class="fine-print">Similar-sized wooden flags often sell online for $300–$350 before shipping. I’m offering this run at $250, with local pickup or delivery available so there’s no need to worry about shipping costs or damage in transit.<br><br>Filling out the form does not require payment today and does not commit you to an order. It simply lets me know you are interested so I can plan materials and follow up with details.</p>
+            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Fill out the interest form</a>
           </div>
         </div>
       </div>
@@ -375,50 +396,44 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">How it works</span>
-          <h2 id="process-title">From interest to your wall</h2>
-          <p>A straightforward, personal process from the first form to final handoff.</p>
+          <h2 id="process-title">Simple Ordering Process</h2>
+          <p>A straightforward, personal process from the interest form to final handoff.</p>
         </div>
         <div class="process-grid">
-          <article class="card process-card"><h3>Fill out the form</h3><p>Share your interest—no payment or commitment is needed today.</p></article>
-          <article class="card process-card"><h3>I follow up</h3><p>I’ll reach out personally with timing and order details.</p></article>
-          <article class="card process-card"><h3>I build your flag</h3><p>Your flag is handmade, distressed, stained, and clear coated.</p></article>
-          <article class="card process-card"><h3>Pickup or delivery</h3><p>We’ll coordinate a convenient local handoff.</p></article>
+          <article class="card process-card"><h3>Fill out the form</h3><p>Share your interest - no payment or commitment is needed today.</p></article>
+          <article class="card process-card"><h3>I follow up</h3><p>I’ll reach out personally with timing and order details. We can discuss all details during this stage.</p></article>
+          <article class="card process-card"><h3>I build your flag</h3><p>After the $50 deposit is paid, your flag is handmade, from start to finish.</p></article>
+          <article class="card process-card"><h3>Pickup or delivery</h3><p>We’ll coordinate a convenient local handoff. The remaining balance is due at this time.</p></article>
         </div>
         <div class="notes-grid">
-          <article class="card note-card"><h3>Where to display it</h3><p>Each flag is finished with interior/exterior polyurethane. For the longest-lasting finish, keep it indoors or in a covered area, out of direct exposure to the elements.</p></article>
-          <article class="card note-card"><h3>Pickup &amp; delivery</h3><p>Pickup and delivery can be coordinated individually. We can meet at a local public spot if that’s more comfortable. Home pickup or delivery may be arranged if we know each other personally.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq" aria-labelledby="faq-title">
-      <div class="container">
-        <div class="section-heading"><span class="eyebrow">Good to know</span><h2 id="faq-title">Frequently asked questions</h2></div>
-        <div class="faq-list">
-          <details><summary>Does the interest form commit me to buying?</summary><p>No. Filling out the form does not require payment today and does not lock you into an order. It only lets me know you may be interested.</p></details>
-          <details><summary>When is payment due?</summary><p>Once orders officially open, a $50 deposit reserves your flag. The remaining $200 is due at pickup or delivery.</p></details>
-          <details><summary>How can I pay?</summary><p>Venmo, PayPal, and cash are accepted.</p></details>
-          <details><summary>Can the flag stay outside?</summary><p>It is protected with interior/exterior polyurethane, but it is best kept indoors or in a covered area away from direct exposure to rain, sun, and other elements.</p></details>
-          <details><summary>Is hanging hardware included?</summary><p>Yes. A French cleat is installed on the back, and wall anchors, screws, and an alignment template are included.</p></details>
-          <details><summary>How will I receive my flag?</summary><p>We’ll coordinate pickup or local delivery individually. A public meeting spot is always an option; home pickup or delivery may be arranged when we know each other personally.</p></details>
+          <article class="card note-card"><h3>Where to display it?</h3><p>Each flag is finished with interior/exterior polyurethane, but for best longevity, I recommend keeping it indoors or in a covered area away from direct exposure to rain, sun, and weather.</p></article>
+          <article class="card note-card"><h3>Pickup &amp; delivery</h3><p>Pickup and delivery can be coordinated individually. A common method is meeting at a local public spot if that’s more comfortable. Feel free to reach out with any questions!</p></article>
         </div>
       </div>
     </section>
 
     <section class="final-cta" aria-labelledby="final-title">
       <div class="container">
-        <h2 id="final-title">Interested in a flag from this summer’s batch?</h2>
-        <p>Add your name to the interest list. There’s no payment and no commitment today—just a simple first step.</p>
-        <a class="button" href="GOOGLE_FORM_LINK_HERE">Join the interest list</a>
+        <h2 id="final-title">Interested in a handmade flag?</h2>
+        <p>Join the interest list to be contacted when I begin organizing the next batch. There is no payment or commitment today.</p>
+        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Join the interest list</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container footer-grid">
-      <div><strong>Stephen Martino</strong><p>Handmade wooden American flags • Locally built</p></div>
-      <div><strong>Get in touch</strong><p>Email: YOUR_EMAIL_HERE<br />Phone: YOUR_PHONE_HERE</p></div>
+      <div><strong>Stephen J. Martino</strong><p>Handmade wooden American flags • Craftsmanship you can trust<br>Copyright © Stephen J. Martino 2026</p></div>
+      <div><strong>Get in touch</strong><p>Email: smartino787@gmail.com<br />Phone: 518-588-9577</p></div>
     </div>
   </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
