@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Handmade wooden American flags built locally by Stephen Martino. Join the interest list for an upcoming batch." />
+  <title>Handmade Wooden American Flags | Stephen Martino</title>
+  <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="flag_assets/Flag_favicon.png" />
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-deep: #071b2d;
+      --red: #a83b3b;
+      --red-dark: #842d2d;
+      --cream: #f7f0df;
+      --paper: #fffaf0;
+      --gold: #b68a4a;
+      --wood: #8a633d;
+      --ink: #263746;
+      --muted: #5f6d78;
+      --line: rgba(16, 42, 67, 0.14);
+      --shadow: 0 18px 45px rgba(7, 27, 45, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      color: var(--navy-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.08;
+    }
+    h1 { margin-bottom: 1rem; font-size: clamp(2.65rem, 9vw, 5.75rem); letter-spacing: -0.045em; }
+    h2 { margin-bottom: 0.85rem; font-size: clamp(2rem, 6vw, 3.45rem); letter-spacing: -0.025em; }
+    h3 { margin-bottom: 0.55rem; font-size: 1.35rem; }
+    p { margin-bottom: 1rem; }
+
+    .container { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 2rem; height: 2px; background: var(--gold); content: ""; }
+    .section { padding: 4.75rem 0; }
+    .section-heading { max-width: 680px; margin-bottom: 2rem; }
+    .section-heading p { color: var(--muted); font-size: 1.08rem; }
+
+    .site-header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.1rem 0;
+      color: white;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; }
+    .nav-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.55rem 1rem; }
+    .nav-link { font-size: 0.78rem; font-weight: 700; text-underline-offset: 0.25rem; }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 25%, rgba(182, 138, 74, 0.22), transparent 28rem),
+        linear-gradient(135deg, var(--navy-deep), var(--navy));
+    }
+    .hero::after {
+      position: absolute;
+      right: -12rem;
+      bottom: -18rem;
+      width: 38rem;
+      height: 38rem;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5rem rgba(255,255,255,0.025), 0 0 0 10rem rgba(255,255,255,0.02);
+      content: "";
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; gap: 2.75rem; align-items: center; }
+    .hero h1 { max-width: 850px; color: white; }
+    .hero .eyebrow { color: #e1bb7d; }
+    .hero-copy { max-width: 710px; }
+    .subtitle { margin-bottom: 0.7rem; color: #fff4dc; font-size: clamp(1.25rem, 4vw, 1.7rem); font-weight: 700; }
+    .hero-note { max-width: 630px; margin-bottom: 1.8rem; color: rgba(255,255,255,0.8); font-size: 1.05rem; }
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.4rem;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--red-dark); }
+    .button:focus-visible { outline: 3px solid #f4cf8d; outline-offset: 4px; }
+    .hero-card {
+      position: relative;
+      max-width: 470px;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 28px 65px rgba(0,0,0,0.27);
+      backdrop-filter: blur(8px);
+    }
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 16px;
+    }
+    .hero-card p { margin: 0.85rem 0 0.1rem; color: rgba(255,255,255,0.73); font-size: 0.82rem; text-align: center; }
+
+    .gallery { column-count: 1; column-gap: 1rem; }
+    .gallery-card {
+      margin: 0 0 1rem;
+      overflow: hidden;
+      break-inside: avoid;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 0.75rem 1rem;
+      color: var(--navy-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .details { background: var(--paper); }
+    .detail-grid { display: grid; gap: 1rem; }
+    .card {
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 12px 32px rgba(7,27,45,0.07);
+    }
+    .spec-card { display: flex; align-items: flex-start; gap: 1rem; }
+    .spec-number {
+      width: 3rem;
+      height: 3rem;
+      flex: 0 0 3rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--red);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .spec-card p { margin: 0; color: var(--muted); }
+    .feature-list { display: grid; gap: 0.7rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+    .feature-list li { position: relative; padding-left: 1.65rem; }
+    .feature-list li::before { position: absolute; left: 0; color: var(--gold); font-weight: 900; content: "◆"; }
+
+    .price-panel {
+      display: grid;
+      gap: 2rem;
+      padding: clamp(1.5rem, 5vw, 3rem);
+      border-radius: 28px;
+      background: var(--navy-deep);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    .price-panel h2, .price-panel h3 { color: white; }
+    .price { margin-bottom: 0.25rem; color: #f2cb88; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.4rem, 13vw, 5.5rem); font-weight: 700; line-height: 1; }
+    .price-label { color: rgba(255,255,255,0.72); }
+    .payment-breakdown { display: grid; gap: 0.8rem; }
+    .payment-row { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .payment-row strong { color: #f2cb88; }
+    .fine-print { margin: 1.2rem 0; color: rgba(255,255,255,0.68); font-size: 0.9rem; }
+
+    .process-grid { display: grid; gap: 1rem; counter-reset: process; }
+    .process-card { position: relative; padding-top: 4.6rem; counter-increment: process; }
+    .process-card::before {
+      position: absolute;
+      top: 1.35rem;
+      left: 1.45rem;
+      color: var(--red);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      content: "0" counter(process);
+    }
+    .notes-grid { display: grid; gap: 1rem; margin-top: 1rem; }
+    .note-card { border-top: 5px solid var(--gold); }
+
+    .faq { background: var(--paper); }
+    .faq-list { display: grid; gap: 0.8rem; }
+    details { border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 8px 24px rgba(7,27,45,0.05); }
+    summary { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; color: var(--navy-deep); font-weight: 800; cursor: pointer; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { color: var(--red); font-size: 1.4rem; content: "+"; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0; padding: 0 1.1rem 1.1rem; color: var(--muted); }
+
+    .final-cta { padding: 5rem 0; background: linear-gradient(135deg, var(--red-dark), var(--red)); color: white; text-align: center; }
+    .final-cta h2 { color: white; }
+    .final-cta p { max-width: 620px; margin: 0 auto 1.5rem; color: rgba(255,255,255,0.82); }
+    .final-cta .button { background: var(--cream); color: var(--navy-deep); }
+    .final-cta .button:hover { background: white; }
+
+    footer { padding: 2.5rem 0; background: #061522; color: rgba(255,255,255,0.7); }
+    .footer-grid { display: grid; gap: 1.25rem; }
+    .footer-grid strong { display: block; margin-bottom: 0.35rem; color: white; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
+    .footer-grid p { margin: 0; font-size: 0.9rem; }
+
+    @media (min-width: 680px) {
+      .container { width: min(1120px, calc(100% - 3rem)); }
+      .nav-link { font-size: 0.85rem; }
+      .gallery { column-count: 2; }
+      .detail-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .notes-grid, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .price-panel { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
+    }
+
+    @media (min-width: 960px) {
+      .section { padding: 6.5rem 0; }
+      .gallery { column-count: 3; }
+      .hero-grid { grid-template-columns: 1.3fr 0.7fr; }
+      .hero-card { transform: rotate(2deg); }
+      .detail-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Stephen Martino</a>
+      <nav class="nav-actions" aria-label="Page links">
+        <a class="nav-link" href="#details">Flag details</a>
+        <a class="nav-link" href="MountingTemplate.pdf" target="_blank" rel="noopener">Printable mounting template</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Celebrating America's 250th Anniversary</span>
+          <h1 id="hero-title">Handmade Wooden American Flags</h1>
+          <p class="subtitle">Built in NY's Capital Region by Stephen Martino</p>
+          <p class="hero-note">I’m putting together a run of handmade wooden American flags. Each flag is built by hand, lightly torched, stained, finished with a gloss clear coat, and made ready to hang. The stars are 3D printed and raised from the surface, giving the flag a unique dimensional look that helps it stand out from typical wooden flags.</p>
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Join the interest list</a>
+        </div>
+        <div class="hero-card">
+          <img class="hero-photo" src="flag_assets/MainFlag2.jpg" alt="Handmade wooden American flag displayed outdoors" />
+          <p>Locally sourced • Handmade • Ready to hang</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Photo Gallery</span>
+          <h2 id="gallery-title">Built to feel at home</h2>
+          <p>A closer look at the craftsmanship, finish, and character of these handmade wooden flags.</p>
+        </div>
+        <div class="gallery">
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag3.jpg" alt="Finished handmade wooden American flag in the workshop" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag5.jpg" alt="Handmade wooden American flag displayed on a stone wall" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag4.jpg" alt="Handmade wooden American flag resting on a workbench" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag6.jpg" alt="Two finished wooden American flags displayed together" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video demonstrating the French cleat mounting system">
+              <source src="flag_assets/FrenchCleatVid.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+            <figcaption class="gallery-caption">Animation showing how the french cleat gets mounted on the wall</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag8.jpg" alt="Vertical wooden American flag displayed beside a staircase" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag7.jpg" alt="Clear-coated wooden American flag on a workbench" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-card">
+            <img class="gallery-image" src="flag_assets/Flag9.jpg" alt="Rear Side of Flag showing french cleat system" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section details" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Flag details</span>
+          <h2 id="details-title">Substantial, but easy to hang</h2>
+          <p>The finished size is a good balance: large enough to stand out, but still easy to place in a garage, office, workshop, camp, or living space.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="card spec-card"><div class="spec-number">19.5</div><div><h3>Inches tall</h3><p>A balanced profile for a statement wall.</p></div></article>
+          <article class="card spec-card"><div class="spec-number">37</div><div><h3>Inches wide</h3><p>Wide enough to make an impact without taking over the room.</p></div></article>
+          <article class="card spec-card"><div class="spec-number">1.5</div><div><h3>Inches thick</h3><p>Built with real depth and a sturdy feel.</p></div></article>
+          <article class="card spec-card"><div class="spec-number">&lt;10</div><div><h3>Pounds</h3><p>Light enough for straightforward wall mounting.</p></div></article>
+        </div>
+        <div class="notes-grid">
+          <article class="card">
+            <h3>Hand-finished wood</h3>
+            <ul class="feature-list">
+              <li>Handmade from wood</li><li>Lightly distressed</li><li>Stained for rich, natural character</li><li>Protected with a clear coat</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Everything needed to hang it</h3>
+            <ul class="feature-list">
+              <li>French cleat installed on the back</li><li>Wall anchors and screws included</li><li>Alignment template included</li><li>Simple, secure wall mounting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="price-panel">
+          <div>
+            <span class="eyebrow">straightforward Pricing</span>
+            <h2 id="pricing-title">One Handmade Flag</h2>
+            <div class="price">$250</div>
+            <p class="price-label">total price</p>
+          </div>
+          <div>
+            <div class="payment-breakdown">
+              <div class="payment-row"><span>Deposit to reserve a flag once orders open</span><strong>$50</strong></div>
+              <div class="payment-row"><span>Remaining balance due at pickup or delivery</span><strong>$200</strong></div>
+              <div class="payment-row"><span>Accepted payment options</span><strong>Venmo, PayPal, or Cash</strong></div>
+            </div>
+            <p class="fine-print">Similar-sized wooden flags often sell online for $300–$350 before shipping. I’m offering this run at $250, with local pickup or delivery available so there’s no need to worry about shipping costs or damage in transit.<br><br>Filling out the form does not require payment today and does not commit you to an order. It simply lets me know you are interested so I can plan materials and follow up with details.</p>
+            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Fill out the interest form</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">How it works</span>
+          <h2 id="process-title">Simple Ordering Process</h2>
+          <p>A straightforward, personal process from the interest form to final handoff.</p>
+        </div>
+        <div class="process-grid">
+          <article class="card process-card"><h3>Fill out the form</h3><p>Share your interest - no payment or commitment is needed today.</p></article>
+          <article class="card process-card"><h3>I follow up</h3><p>I’ll reach out personally with timing and order details. We can discuss all details during this stage.</p></article>
+          <article class="card process-card"><h3>I build your flag</h3><p>After the $50 deposit is paid, your flag is handmade, from start to finish.</p></article>
+          <article class="card process-card"><h3>Pickup or delivery</h3><p>We’ll coordinate a convenient local handoff. The remaining balance is due at this time.</p></article>
+        </div>
+        <div class="notes-grid">
+          <article class="card note-card"><h3>Where to display it?</h3><p>Each flag is finished with interior/exterior polyurethane, but for best longevity, I recommend keeping it indoors or in a covered area away from direct exposure to rain, sun, and weather.</p></article>
+          <article class="card note-card"><h3>Pickup &amp; delivery</h3><p>Pickup and delivery can be coordinated individually. A common method is meeting at a local public spot if that’s more comfortable. Feel free to reach out with any questions!</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="container">
+        <h2 id="final-title">Interested in a handmade flag?</h2>
+        <p>Join the interest list to be contacted when I begin organizing the next batch. There is no payment or commitment today.</p>
+        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdZDLdTFj3FdDezOgcmuakL8AW5WHm8dcuZTY7eBoLMjBnreQ/viewform" target="_blank">Join the interest list</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Stephen J. Martino</strong><p>Handmade wooden American flags • Craftsmanship you can trust<br>Copyright © Stephen J. Martino 2026</p></div>
+      <div><strong>Get in touch</strong><p>Email: smartino787@gmail.com<br />Phone: 518-588-9577</p></div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
