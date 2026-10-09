@@ -167,6 +167,17 @@
       font-weight: 700;
       text-align: center;
     }
+    .video-row {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .video-row .gallery-card { margin-bottom: 0; }
+    .video-row .gallery-image {
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #061522;
+    }
 
     .details { background: var(--paper); }
     .detail-grid { display: grid; gap: 1rem; }
@@ -252,6 +263,7 @@
       .container { width: min(1120px, calc(100% - 3rem)); }
       .nav-link { font-size: 0.85rem; }
       .gallery { column-count: 2; }
+      .video-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .detail-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .notes-grid, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .price-panel { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
@@ -321,6 +333,8 @@
           <figure class="gallery-card">
             <img class="gallery-image" src="flag_assets/Flag6.jpg" alt="Two finished wooden American flags displayed together" loading="lazy" decoding="async" />
           </figure>
+        </div>
+        <div class="video-row">
           <figure class="gallery-card">
             <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video demonstrating the French cleat mounting system">
               <source src="flag_assets/FrenchCleatVid.mp4" type="video/mp4" />
@@ -328,6 +342,15 @@
             </video>
             <figcaption class="gallery-caption">Animation showing how the french cleat gets mounted on the wall</figcaption>
           </figure>
+          <figure class="gallery-card">
+            <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video showing a finished wooden American flag being mounted onto the wall using the French cleat">
+              <source src="flag_assets/FlagMountingVid.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+            <figcaption class="gallery-caption">Mounting the finished flag onto the French cleat</figcaption>
+          </figure>
+        </div>
+        <div class="gallery">
           <figure class="gallery-card">
             <img class="gallery-image" src="flag_assets/Flag8.jpg" alt="Vertical wooden American flag displayed beside a staircase" loading="lazy" decoding="async" />
           </figure>
@@ -430,7 +453,6 @@
   </footer>
 </body>
 </html>
-
 
 
 
