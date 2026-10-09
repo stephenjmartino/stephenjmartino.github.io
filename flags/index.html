@@ -267,7 +267,11 @@
       .container { width: min(1120px, calc(100% - 3rem)); }
       .nav-link { font-size: 0.85rem; }
       .gallery { column-count: 2; }
-      .video-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .video-row {
+        grid-template-columns: repeat(2, minmax(0, 300px));
+        justify-content: center;
+        align-items: start;
+      }
       .detail-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .notes-grid, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .price-panel { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
@@ -457,6 +461,5 @@
   </footer>
 </body>
 </html>
-
 
 
