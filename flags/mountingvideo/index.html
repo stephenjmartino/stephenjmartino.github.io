@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Watch how to mount a Stephen Martino handmade wooden American flag using its French cleat."
+  />
+  <title>Flag Mounting Video | Stephen Martino</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="../flag_assets/Flag_favicon.png?v=2" />
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-deep: #071b2d;
+      --red: #a83b3b;
+      --red-dark: #842d2d;
+      --cream: #f7f0df;
+      --paper: #fffaf0;
+      --gold: #b68a4a;
+      --ink: #263746;
+      --muted: #5f6d78;
+      --line: rgba(16, 42, 67, 0.14);
+      --shadow: 0 22px 55px rgba(7, 27, 45, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { color-scheme: light; }
+
+    body {
+      min-width: 0;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(182, 138, 74, 0.17), transparent 26rem),
+        var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(920px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--navy-deep);
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-underline-offset: 0.25rem;
+    }
+
+    main { padding: 3.25rem 0 4.5rem; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0 0 0.9rem;
+      color: var(--red);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 2rem;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 0 1rem;
+      color: var(--navy-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 8vw, 4.75rem);
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 0 2rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+    }
+
+    .video-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrap {
+      display: grid;
+      place-items: center;
+      padding: clamp(0.75rem, 2vw, 1.25rem);
+      background: #061522;
+    }
+
+    video {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: min(72vh, 760px);
+      border-radius: 14px;
+      background: black;
+    }
+
+    .card-copy { padding: 1.35rem; }
+
+    .card-copy h2 {
+      margin: 0 0 0.45rem;
+      color: var(--navy-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 4vw, 2rem);
+      line-height: 1.15;
+    }
+
+    .card-copy p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.35rem;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(7, 27, 45, 0.16);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .button.secondary {
+      border-color: var(--navy);
+      background: transparent;
+      color: var(--navy);
+      box-shadow: none;
+    }
+
+    .button:hover { transform: translateY(-2px); background: var(--red-dark); }
+    .button.secondary:hover { background: var(--navy); color: white; }
+    .button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
+    footer {
+      padding: 1.25rem 0;
+      background: var(--navy-deep);
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    footer p { margin: 0; }
+
+    @media (min-width: 620px) {
+      .container { width: min(920px, calc(100% - 3rem)); }
+      main { padding-top: 4.5rem; }
+      .actions { display: flex; flex-wrap: wrap; }
+      .button { min-width: 220px; }
+      .card-copy { padding: 1.6rem 1.75rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <span class="brand">Stephen Martino</span>
+      <a class="back-link" href="../">Back to flag details</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" aria-labelledby="page-title">
+      <p class="eyebrow">Mounting guide</p>
+      <h1 id="page-title">How to Mount Your Wooden American Flag</h1>
+      <p class="intro">
+        This short video shows how the finished flag seats onto the wall-mounted French cleat.
+        It plays continuously so you can follow the motion while installing your flag.
+      </p>
+
+      <article class="video-card">
+        <div class="video-wrap">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="Video showing a finished wooden American flag being mounted onto a wall using a French cleat"
+          >
+            <source src="../flag_assets/FlagMountingVid.mp4" type="video/mp4" />
+            Your browser does not support the video. You can
+            <a href="../flag_assets/FlagMountingVid.mp4">open the mounting video directly</a>.
+          </video>
+        </div>
+        <div class="card-copy">
+          <h2>Mounting the finished flag</h2>
+          <p>Lift the flag into place and lower it securely onto the mounted French cleat.</p>
+        </div>
+      </article>
+
+      <div class="actions">
+        <a class="button" href="../MountingInstructions.html">View mounting instructions</a>
+        <a class="button secondary" href="../">See flag details</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Handmade wooden American flags by Stephen Martino</p>
+    </div>
+  </footer>
+</body>
+</html>
