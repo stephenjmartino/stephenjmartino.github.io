@@ -174,10 +174,14 @@
     }
     .video-row .gallery-card { margin-bottom: 0; }
     .video-row .gallery-image {
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-      background: #061522;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      background: transparent;
     }
+    .video-row .cleat-animation { aspect-ratio: 470 / 719; }
+    .video-row .mounting-video { aspect-ratio: 9 / 16; }
 
     .details { background: var(--paper); }
     .detail-grid { display: grid; gap: 1rem; }
@@ -336,14 +340,14 @@
         </div>
         <div class="video-row">
           <figure class="gallery-card">
-            <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video demonstrating the French cleat mounting system">
+            <video class="gallery-image cleat-animation" autoplay muted loop playsinline preload="metadata" aria-label="Video demonstrating the French cleat mounting system">
               <source src="flag_assets/FrenchCleatVid.mp4" type="video/mp4" />
               Your browser does not support embedded video.
             </video>
             <figcaption class="gallery-caption">Animation showing how the french cleat gets mounted on the wall</figcaption>
           </figure>
           <figure class="gallery-card">
-            <video class="gallery-image" autoplay muted loop playsinline preload="metadata" aria-label="Video showing a finished wooden American flag being mounted onto the wall using the French cleat">
+            <video class="gallery-image mounting-video" autoplay muted loop playsinline preload="metadata" aria-label="Video showing a finished wooden American flag being mounted onto the wall using the French cleat">
               <source src="flag_assets/FlagMountingVid.mp4" type="video/mp4" />
               Your browser does not support embedded video.
             </video>
@@ -453,7 +457,6 @@
   </footer>
 </body>
 </html>
-
 
 
 
